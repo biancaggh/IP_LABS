@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Try_01</string>
+    <string name="login">Login</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="no_of_incorrect_attempts">No. of incorrect attempts:</string>
+    <string name="i_see_nothing">I see nothing</string>
+    <string name="profil">Profil</string>
+    <string name="e_mail">E-mail</string>
+    <string name="logout">Logout</string>
+    <string name="nume">Nume:</string>
+    <string name="prenume">Prenume:</string>
+    <string name="e_mail2">E-mail:</string>
+    <string name="cnp">CNP:</string>
+</resources>
