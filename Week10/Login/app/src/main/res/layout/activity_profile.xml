@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ProfileActivity" android:id="@+id/a">
+
+    <Button
+            android:text="@string/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/btnLogout" app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintVertical_bias="0.777"/>
+    <TextView
+            android:layout_width="197dp"
+            android:layout_height="62dp" android:id="@+id/tvnume"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+            app:layout_constraintVertical_bias="0.198"/>
+    <TextView
+            android:layout_width="193dp"
+            android:layout_height="70dp" android:id="@+id/tvprenume"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvnume" app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+            app:layout_constraintVertical_bias="0.145"/>
+    <TextView
+            android:layout_width="191dp"
+            android:layout_height="63dp" android:id="@+id/tvuser"
+            app:layout_constraintTop_toBottomOf="@+id/tvprenume"
+            app:layout_constraintBottom_toTopOf="@+id/btnLogout" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.257"/>
+    <TextView
+            android:layout_width="184dp"
+            android:layout_height="62dp" android:id="@+id/tvsex"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvuser" app:layout_constraintBottom_toTopOf="@+id/btnLogout"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
