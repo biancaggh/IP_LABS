@@ -21,6 +21,7 @@ public class Profil extends AppCompatActivity {
         inflater.inflate(R.menu.meniu, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -44,15 +45,17 @@ public class Profil extends AppCompatActivity {
             Intent intent = new Intent(Profil.this, Statistici.class);
             startActivity(intent);
             return true;
+        }else if (id == R.id.item4) {
+            Intent intent = new Intent(Profil.this, Anomalii.class);
+            startActivity(intent);
+            return true;
+        }else
+        if (id == R.id.item5) {
+            Intent intent = new Intent(Profil.this, IstoricMedical.class);
+            startActivity(intent);
+            return true;
         }
-
-//        else
-//        if (id == R.id.item4) {
-//            return true;
-//        }else
-//        if (id == R.id.item5) {
-//            return true;
-//        }else
+        //else
 //        if (id == R.id.item5) {
 //            return true;
 //        }

@@ -7,14 +7,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Spinner;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class IstoricMedical extends AppCompatActivity {
+
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profil);
+        setContentView(R.layout.activity_istoric_medical);
     }
 
     @Override
@@ -34,26 +33,26 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.item1) {
 
-            Intent intent = new Intent(MainActivity.this, Profil.class);
+            Intent intent = new Intent(IstoricMedical.this, Profil.class);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item2) {
-            Intent intent = new Intent(MainActivity.this, Diagnostic.class);
+            Intent intent = new Intent(IstoricMedical.this, Diagnostic.class);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item3) {
-            Intent intent = new Intent(MainActivity.this, Statistici.class);
+            Intent intent = new Intent(IstoricMedical.this, Statistici.class);
             startActivity(intent);
             return true;
         }else if (id == R.id.item4) {
-            Intent intent = new Intent(MainActivity.this, Anomalii.class);
+            Intent intent = new Intent(IstoricMedical.this, Anomalii.class);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item5) {
-            Intent intent = new Intent(MainActivity.this, IstoricMedical.class);
+            Intent intent = new Intent(IstoricMedical.this, IstoricMedical.class);
             startActivity(intent);
             return true;
         }

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProfilePractice">
-        <activity android:name=".Anomalii"></activity>
+        <activity android:name=".IstoricMedical"></activity>
+        <activity android:name=".Anomalii" />
         <activity android:name=".Statistici" />
         <activity android:name=".Diagnostic" />
         <activity android:name=".Profil" />

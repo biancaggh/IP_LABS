@@ -45,15 +45,17 @@ public class Diagnostic extends AppCompatActivity {
             Intent intent = new Intent(Diagnostic.this, Statistici.class);
             startActivity(intent);
             return true;
+        }else if (id == R.id.item4) {
+            Intent intent = new Intent(Diagnostic.this, Anomalii.class);
+            startActivity(intent);
+            return true;
+        }else
+        if (id == R.id.item5) {
+            Intent intent = new Intent(Diagnostic.this, IstoricMedical.class);
+            startActivity(intent);
+            return true;
         }
-
-//        else
-//        if (id == R.id.item4) {
-//            return true;
-//        }else
-//        if (id == R.id.item5) {
-//            return true;
-//        }else
+        //else
 //        if (id == R.id.item5) {
 //            return true;
 //        }
