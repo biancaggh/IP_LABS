@@ -7,13 +7,25 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class Statistici extends AppCompatActivity {
+    private Button Sync;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistici);
+        Sync = (Button) findViewById(R.id.button5);
+        Sync.setOnClickListener(new View.OnClickListener()
+        {
+        @Override
+        public void onClick(View Sync) {
+            Intent intent=new Intent(Statistici.this, Statistici.class);
+            startActivity(intent);
+        }
+    });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -21,7 +33,6 @@ public class Statistici extends AppCompatActivity {
         inflater.inflate(R.menu.meniu, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
