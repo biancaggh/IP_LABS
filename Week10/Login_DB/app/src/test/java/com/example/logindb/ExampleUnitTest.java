@@ -1,4 +1,4 @@
-package com.example.faaailing;
+package com.example.logindb;
 
 import org.junit.Test;
 
