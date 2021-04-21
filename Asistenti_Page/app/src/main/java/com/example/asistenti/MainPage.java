@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainPage extends AppCompatActivity {
     private Button button1;
     private Button button2;
     private Button button3;
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_page);
 
         button1= (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -51,22 +51,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void openListaPacienti(){
-       Intent intent=new Intent(MainActivity.this,ListaPacienti.class);
+        Intent intent=new Intent(MainPage.this,ListaPacienti.class);
         startActivity(intent);
-   }
+    }
 
     public void openAddPacient(){
-        Intent intent=new Intent(MainActivity.this,AdaugaPacient.class);
+        Intent intent=new Intent(MainPage.this,AdaugaPacient.class);
         startActivity(intent);
     }
 
     public void openOrarGarda(){
-        Intent intent=new Intent(MainActivity.this,OrarGarda.class);
+        Intent intent=new Intent(MainPage.this,OrarGarda.class);
         startActivity(intent);
     }
 
     public void openAsistentProfil(){
-        Intent intent=new Intent(MainActivity.this,ProfilAsistent.class);
+        Intent intent=new Intent(MainPage.this,ProfilAsistent.class);
         startActivity(intent);
     }
 }

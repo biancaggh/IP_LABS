@@ -2,54 +2,44 @@ package com.example.asistenti;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.RadioButton;
+import android.widget.Button;
 import android.widget.Spinner;
 
-public class AdaugaPacient extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-     private Spinner spinner;
-    private static final String[] paths = {"M", "F", "Altul"};
+public class LoginPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+    private Spinner spinner;
+    private Button button;
+    private static final String[] paths = {"Asistent", "Doctor", "Pacient"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adauga_pacient);
-
-        EditText numeEditText = (EditText) findViewById(R.id.nume);
-        String Nume = numeEditText.getText().toString();
-
-        EditText prenumeEditText = (EditText) findViewById(R.id.prenume);
-        String Prenume = prenumeEditText.getText().toString();
-
-        EditText cnpEditText = (EditText) findViewById(R.id.id_pac);
-        String CNP = cnpEditText.getText().toString();
-
-        EditText adresaEditText = (EditText) findViewById(R.id.adresa);
-        String adresa = adresaEditText.getText().toString();
-
-        EditText data_nEditText = (EditText) findViewById(R.id.data_nas);
-        String data_n = data_nEditText.getText().toString();
-
-        EditText heightEditText = (EditText) findViewById(R.id.height);
-        String height = heightEditText.getText().toString();
-
-        EditText weightEditText = (EditText) findViewById(R.id.weight);
-        String weight = weightEditText.getText().toString();
-
-
+        setContentView(R.layout.activity_login_page);
         spinner = (Spinner)findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(AdaugaPacient.this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(LoginPage.this,
                 android.R.layout.simple_spinner_item,paths);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        button= (Button) findViewById(R.id.button_log);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainPage();
+            }
+        });
+
     }
 
+    public void openMainPage(){
+        Intent intent=new Intent(LoginPage.this,MainPage.class);
+        startActivity(intent);
+    }
     @Override
     public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
 
@@ -69,9 +59,8 @@ public class AdaugaPacient extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
+        // TODO Auto-generated method stub
     }
-
     public void submitbuttonHandler(View view) {
         //Decide what happens when the user clicks the submit button
 
