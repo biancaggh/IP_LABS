@@ -1,5 +1,6 @@
 package com.profilepractice;
 
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,13 +8,33 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import org.json.JSONException;
+import org.json.JSONObject;
+import utility.AsyncResponse;
+import utility.CCH;
+import utility.LoginAsync;
+import utility.ProfilAsync;
 
-public class Profil extends AppCompatActivity {
+public class Profil extends AppCompatActivity implements AsyncResponse {
+
+    private String user;
+    private TextView Nume;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
+
+        user=getIntent().getStringExtra("EXTRA_USER");
+        Nume=(TextView) findViewById(R.id.viewNume);
+
+        System.out.println("----------------------------------------------------");
+        System.out.println(user);
+        System.out.println("----------------------------------------------------");
+
+        ProfilAsync asyncTask =new ProfilAsync();
+        asyncTask.delegate = this;
+        asyncTask.execute(user);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -64,4 +85,15 @@ public class Profil extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void processFinish(JSONObject output) throws JSONException {
+        System.out.println("----------------------------------------------------");
+        System.out.println(output.getString("adresa"));
+        System.out.println("----------------------------------------------------");
+        Nume.setText(output.getString("adresa"));
+    }
+
+    @Override
+    public void processFinish(Integer output) {}
 }

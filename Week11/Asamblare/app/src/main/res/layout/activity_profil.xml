@@ -73,12 +73,12 @@
                     android:textSize="18dp"
                     android:textStyle="bold" />
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="something"
-                    android:layout_marginLeft="25dp"
-                    android:textSize="18dp"
-                    android:textColor="@android:color/darker_gray"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="something"
+                        android:layout_marginLeft="25dp"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/darker_gray" android:id="@+id/viewNume"/>
 
             </LinearLayout>
 

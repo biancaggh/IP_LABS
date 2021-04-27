@@ -1,14 +1,13 @@
 package utility;
 
 
-import android.content.Intent;
+
 import android.os.AsyncTask;
-import android.widget.Toast;
 import org.json.JSONException;
 
 public class LoginAsync extends AsyncTask<String, Integer, Integer> {
 
-    public LoginAsyncResponse delegate = null;
+    public AsyncResponse delegate = null;
     protected int value;
     @Override
     protected Integer doInBackground(String... strings) {

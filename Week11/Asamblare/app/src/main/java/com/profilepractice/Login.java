@@ -1,8 +1,6 @@
 package com.profilepractice;
 
 import android.content.Intent;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,18 +8,18 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import org.json.JSONObject;
 import utility.LoginAsync;
-import utility.LoginAsyncResponse;
+import utility.AsyncResponse;
 import org.json.JSONException;
 
 import java.net.MalformedURLException;
 
-
-
-public class Login extends AppCompatActivity implements View.OnClickListener, LoginAsyncResponse {
+public class Login extends AppCompatActivity implements View.OnClickListener, AsyncResponse {
     private EditText User;
     private EditText Password;
     private Button Login;
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +48,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener, Lo
         }
 
     private void userLogin() throws JSONException, MalformedURLException {
-        String user = User.getText().toString().trim();
+        user = User.getText().toString().trim();
+
         String password = Password.getText().toString().trim();
 
         if (user.isEmpty()) {
@@ -75,11 +74,17 @@ public class Login extends AppCompatActivity implements View.OnClickListener, Lo
 
         if(output==1)
         {
-            startActivity(new Intent(Login.this, Profil.class));
+            Intent intent = new Intent(Login.this, Profil.class);
+            intent.putExtra("EXTRA_USER", user);
+            startActivity(intent);
+            //startActivity(new Intent(Login.this, Profil.class));
         }
         else {
             Toast.makeText(Login.this, "Conectare esuata! ", Toast.LENGTH_LONG).show();
         }
     }
+
+    @Override
+    public void processFinish(JSONObject output) {}
 }
 
