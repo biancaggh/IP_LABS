@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ProfilePractice</string>
+    <string name="gen">Gen</string>
+    <string name="saturatie">Saturatie</string>
+    <string name="user">user</string>
+    <string name="login">login</string>
+    <string name="password">password</string>
+    <string name="Password">Password</string>
+    <string name="User">User</string>
+    <string name="Parola">Parola</string>
+    <string name="conectare">conectare</string>
+</resources>
