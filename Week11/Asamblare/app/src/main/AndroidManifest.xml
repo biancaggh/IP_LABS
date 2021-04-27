@@ -16,6 +16,11 @@
         <activity android:name=".Diagnostic" />
         <activity android:name=".Profil" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".Manual_Data_Heart_Rate" />
+        <activity android:name=".Manual_Data_Introduction" />
+        <activity android:name=".Manual_Data_Oxygen" />
+        <activity android:name=".Manual_Data_Sleep" />
+        <activity android:name=".Manual_Data_Sport" />
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

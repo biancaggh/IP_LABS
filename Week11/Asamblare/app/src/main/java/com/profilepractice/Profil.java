@@ -100,6 +100,10 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
             //startActivity(intent);
             return true;
         } else if (id == R.id.item6) {
+            Intent intent = new Intent(Profil.this, Manual_Data_Introduction.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.item7) {
             Intent intent = new Intent(Profil.this, Login.class);
             startActivity(intent);
             return true;

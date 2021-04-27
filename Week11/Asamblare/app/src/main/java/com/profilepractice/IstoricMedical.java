@@ -91,6 +91,10 @@ public class IstoricMedical extends AppCompatActivity implements AsyncResponse {
             //startActivity(intent);
             return true;
         } else if (id == R.id.item6) {
+            Intent intent = new Intent(IstoricMedical.this, Manual_Data_Introduction.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.item7) {
             Intent intent = new Intent(IstoricMedical.this, Login.class);
             startActivity(intent);
             return true;

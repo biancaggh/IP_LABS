@@ -66,8 +66,11 @@ public class Statistici extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        else
-        if (id == R.id.item6) {
+        else if (id == R.id.item6) {
+            Intent intent = new Intent(Statistici.this, Manual_Data_Introduction.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.item7) {
             Intent intent = new Intent(Statistici.this, Login.class);
             startActivity(intent);
             return true;

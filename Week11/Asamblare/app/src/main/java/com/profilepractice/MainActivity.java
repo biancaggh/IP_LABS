@@ -57,8 +57,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        else
-        if (id == R.id.item6) {
+        else if (id == R.id.item6) {
+            Intent intent = new Intent(MainActivity.this, Manual_Data_Introduction.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.item7) {
             Intent intent = new Intent(MainActivity.this, Login.class);
             startActivity(intent);
             return true;
