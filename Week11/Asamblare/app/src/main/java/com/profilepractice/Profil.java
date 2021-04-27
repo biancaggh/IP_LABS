@@ -15,6 +15,7 @@ import utility.*;
 public class Profil extends AppCompatActivity implements AsyncResponse {
 
     private String user;
+    private String cnp;
     private TextView User;
     private TextView Nume;
     private TextView Prenume;
@@ -66,11 +67,20 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
         if (id == R.id.item1) {
 
             Intent intent = new Intent(Profil.this, Profil.class);
+            intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
+
+            //Intent intent = new Intent(Profil.this, Profil.class);
+            //startActivity(intent);
             return true;
         } else if (id == R.id.item2) {
+
             Intent intent = new Intent(Profil.this, Diagnostic.class);
+            intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
+
+            //Intent intent = new Intent(Profil.this, Diagnostic.class);
+            //startActivity(intent);
             return true;
         } else if (id == R.id.item3) {
             Intent intent = new Intent(Profil.this, Statistici.class);
@@ -81,8 +91,13 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
             startActivity(intent);
             return true;
         } else if (id == R.id.item5) {
+
             Intent intent = new Intent(Profil.this, IstoricMedical.class);
+            intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
+
+            //Intent intent = new Intent(Profil.this, IstoricMedical.class);
+            //startActivity(intent);
             return true;
         } else if (id == R.id.item6) {
             Intent intent = new Intent(Profil.this, Login.class);
@@ -100,10 +115,6 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
 
     @Override
     public void processFinish(JSONObject output) throws JSONException {
-        System.out.println("----------------------------------------------------");
-        System.out.println(output.getString("adresa"));
-        System.out.println("----------------------------------------------------");
-
 
         User.setText(user);
         Nume.setText(output.getString("nume"));

@@ -27,18 +27,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID"
+            android:text="User"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/viewID"/>
 
     </LinearLayout>
 
@@ -79,12 +78,11 @@
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/viewAfectiune"/>
 
     </LinearLayout>
 
@@ -148,12 +146,11 @@
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/viewMedicamente"/>
 
     </LinearLayout>
 
@@ -182,12 +179,11 @@
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/viewAdministrare"/>
 
     </LinearLayout>
 
@@ -228,12 +224,11 @@
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/viewIndicatii"/>
 
     </LinearLayout>
 
@@ -272,12 +267,11 @@
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/viewContraindicatii"/>
 
     </LinearLayout>
 
