@@ -85,6 +85,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener, As
     }
 
     @Override
-    public void processFinish(JSONObject output) {}
+    public void processFinish(JSONObject output) throws JSONException {
+
+    }
 }
 

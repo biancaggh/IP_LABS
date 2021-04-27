@@ -7,4 +7,5 @@ public interface AsyncResponse {
 
     void processFinish(Integer output);
     void processFinish(JSONObject output) throws JSONException;
+
 }

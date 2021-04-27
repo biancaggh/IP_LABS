@@ -31,6 +31,7 @@ public class CCH {
 
     public static JSONObject getPacient(String username) {
         String tempurl = host + "/api/user/getPacient/" + username;
+
         return getRequest(tempurl);
     }
 

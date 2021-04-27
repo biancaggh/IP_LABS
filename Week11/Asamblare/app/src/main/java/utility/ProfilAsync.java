@@ -4,6 +4,7 @@ package utility;
 
 import android.os.AsyncTask;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ProfilAsync extends AsyncTask<String, Integer, JSONObject> {
@@ -19,8 +20,12 @@ public class ProfilAsync extends AsyncTask<String, Integer, JSONObject> {
     protected void onProgressUpdate(Integer... progress) {
     }
 
-    protected void onPostExecute(Integer result) {
-        delegate.processFinish(result);
+    protected void onPostExecute(JSONObject jsonObject) {
+        try {
+            delegate.processFinish(jsonObject);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 }
