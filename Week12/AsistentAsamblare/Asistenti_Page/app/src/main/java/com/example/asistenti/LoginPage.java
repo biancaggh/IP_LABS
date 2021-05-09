@@ -25,6 +25,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     private Button button;
     private EditText User;
     private EditText Password;
+    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     private void userLogin() throws JSONException, MalformedURLException {
         user = User.getText().toString().trim();
 
-        String password = Password.getText().toString().trim();
+        password = Password.getText().toString().trim();
 
         if (user.isEmpty()) {
             User.setError("User is required!");
