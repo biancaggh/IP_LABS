@@ -5,11 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -22,10 +19,10 @@ import utility.LoginAsync;
 
 public class LoginPage extends AppCompatActivity implements View.OnClickListener, AsyncResponse {
     private  String user;
+    private String password;
     private Button button;
     private EditText User;
     private EditText Password;
-    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +30,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_login_page);
 
         button= (Button) findViewById(R.id.button_log);
-        User = (EditText) findViewById(R.id.user);
+        User = (EditText) findViewById(R.id.userid);
         Password = (EditText) findViewById(R.id.parola);
 
         button.setOnClickListener(this);
@@ -80,7 +77,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
             Intent intent = new Intent(LoginPage.this, MainPage.class);
             intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
-            //startActivity(new Intent(Login.this, Profil.class));
+
         }
         else {
             Toast.makeText(LoginPage.this, "Conectare esuata! ", Toast.LENGTH_LONG).show();
