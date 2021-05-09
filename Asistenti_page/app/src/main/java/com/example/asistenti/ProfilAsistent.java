@@ -66,8 +66,6 @@ public class ProfilAsistent extends AppCompatActivity implements AsyncResponse {
             intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
 
-            //Intent intent = new Intent(Profil.this, Profil.class);
-            //startActivity(intent);
             return true;
         } else if (id == R.id.item2) {
 
@@ -75,27 +73,22 @@ public class ProfilAsistent extends AppCompatActivity implements AsyncResponse {
             intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
 
-            //Intent intent = new Intent(Profil.this, Diagnostic.class);
-            //startActivity(intent);
             return true;
         } else if (id == R.id.item3) {
             Intent intent = new Intent(ProfilAsistent.this, OrarGarda.class);
-            // intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
             return true;
         } else if (id == R.id.item4) {
             Intent intent = new Intent(ProfilAsistent.this, ProfilAsistent.class);
-            // intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
             return true;
         } else if (id == R.id.item5) {
 
             Intent intent = new Intent(ProfilAsistent.this, LoginPage.class);
-            intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
 
-            //Intent intent = new Intent(Profil.this, IstoricMedical.class);
-            //startActivity(intent);
             return true;
         }
 

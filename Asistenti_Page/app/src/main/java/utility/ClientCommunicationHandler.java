@@ -21,6 +21,7 @@ public class ClientCommunicationHandler {
         String tempurl = host + "/api/user/login/" + username + "/" + password;
         JSONObject jsonObject = getRequest(tempurl);
         System.out.println(jsonObject);
+        System.out.println(tempurl);
         if(jsonObject.has("login"))
             if(jsonObject.get("login").equals("true"))
                 return 1;
@@ -104,18 +105,10 @@ public class ClientCommunicationHandler {
         HttpURLConnection connection = null;
         try {
 
-
-
             URL url = new URL(URL);
-
             connection = (HttpURLConnection) url.openConnection();
-
             connection.setRequestMethod("GET");
-
             response = new JSONObject(readFromConnection(connection));
-
-
-
 
         }catch (Exception e){
             response = new JSONObject();
