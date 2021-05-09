@@ -8,61 +8,91 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-public class LoginPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-    private Spinner spinner;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.MalformedURLException;
+
+import utility.AsyncResponse;
+import utility.LoginAsync;
+
+public class LoginPage extends AppCompatActivity implements View.OnClickListener, AsyncResponse {
+    private  String user;
     private Button button;
-    private static final String[] paths = {"Asistent", "Doctor", "Pacient"};
+    private EditText User;
+    private EditText Password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        spinner = (Spinner)findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(LoginPage.this,
-                android.R.layout.simple_spinner_item,paths);
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
 
         button= (Button) findViewById(R.id.button_log);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMainPage();
-            }
-        });
+        User = (EditText) findViewById(R.id.user);
+        Password = (EditText) findViewById(R.id.parola);
 
-    }
-
-    public void openMainPage(){
-        Intent intent=new Intent(LoginPage.this,MainPage.class);
-        startActivity(intent);
+        button.setOnClickListener(this);
     }
     @Override
-    public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button_log:
+                try {
+                    userLogin();
+                } catch (JSONException | MalformedURLException e) {
+                    e.printStackTrace();
+                }
+                break;
+        }
+    }
 
-        switch (position) {
-            case 0:
-                // Whatever you want to happen when the first item gets selected
-                break;
-            case 1:
-                // Whatever you want to happen when the second item gets selected
-                break;
-            case 2:
-                // Whatever you want to happen when the thrid item gets selected
-                break;
+    private void userLogin() throws JSONException, MalformedURLException {
+        user = User.getText().toString().trim();
 
+        String password = Password.getText().toString().trim();
+
+        if (user.isEmpty()) {
+            User.setError("User is required!");
+            User.requestFocus();
+            return;
+        }
+
+        if (password.isEmpty()) {
+            Password.setError("Password is required!");
+            Password.requestFocus();
+            return;
+        }
+
+        LoginAsync asyncTask =new LoginAsync();
+        asyncTask.delegate = this;
+        asyncTask.execute(user,password);
+    }
+
+    @Override
+    public void processFinish(Integer output) {
+        if(output==1)
+        {
+            Intent intent = new Intent(LoginPage.this, MainPage.class);
+            intent.putExtra("EXTRA_USER", user);
+            startActivity(intent);
+            //startActivity(new Intent(Login.this, Profil.class));
+        }
+        else {
+            Toast.makeText(LoginPage.this, "Conectare esuata! ", Toast.LENGTH_LONG).show();
         }
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        // TODO Auto-generated method stub
+    public void processFinish(JSONObject output) throws JSONException {
+
     }
-    public void submitbuttonHandler(View view) {
-        //Decide what happens when the user clicks the submit button
+
+    @Override
+    public void processFinish(Boolean output) throws JSONException {
 
     }
 

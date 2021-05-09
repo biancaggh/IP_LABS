@@ -30,6 +30,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/auser"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -45,7 +46,6 @@
         android:layout_marginRight="155dp"
         android:layout_marginBottom="526dp"
         android:gravity="center"
-        android:text="User User"
         android:textColor="@android:color/black"
         android:textSize="18dp"
         android:textStyle="bold"
@@ -145,6 +145,7 @@
 
 
     <TextView
+        android:id="@+id/anume"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_alignParentStart="true"
@@ -159,7 +160,6 @@
         android:layout_marginEnd="148dp"
         android:layout_marginRight="148dp"
         android:layout_marginBottom="452dp"
-        android:text="something"
         android:textColor="@android:color/darker_gray"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -233,6 +233,7 @@
         app:layout_constraintVertical_bias="0.366" />
 
     <TextView
+        android:id="@+id/aprenume"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_alignParentStart="true"
@@ -247,7 +248,6 @@
         android:layout_marginEnd="150dp"
         android:layout_marginRight="150dp"
         android:layout_marginBottom="385dp"
-        android:text="something"
         android:textColor="@android:color/darker_gray"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -324,6 +324,7 @@
         app:layout_constraintVertical_bias="0.366" />
 
     <TextView
+        android:id="@+id/agen"
         android:layout_width="wrap_content"
         android:layout_height="47dp"
         android:layout_alignParentStart="true"
@@ -338,7 +339,6 @@
         android:layout_marginEnd="150dp"
         android:layout_marginRight="150dp"
         android:layout_marginBottom="317dp"
-        android:text="something"
         android:textColor="@android:color/darker_gray"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -416,6 +416,7 @@
         app:layout_constraintVertical_bias="0.366" />
 
     <TextView
+        android:id="@+id/aid"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
@@ -430,7 +431,6 @@
         android:layout_marginEnd="152dp"
         android:layout_marginRight="152dp"
         android:layout_marginBottom="248dp"
-        android:text="something"
         android:textColor="@android:color/darker_gray"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -512,6 +512,7 @@
         app:layout_constraintVertical_bias="0.366" />
 
     <TextView
+        android:id="@+id/asectie"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -526,7 +527,6 @@
         android:layout_marginEnd="152dp"
         android:layout_marginRight="152dp"
         android:layout_marginBottom="181dp"
-        android:text="something"
         android:textColor="@android:color/darker_gray"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
