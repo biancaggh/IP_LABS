@@ -139,6 +139,8 @@ public class Profil extends AppCompatActivity implements AsyncResponse, ProfilVi
         Inaltime.setText(output.getString("inaltime"));
         Greutate.setText(output.getString("greutate"));
 
+        verify();
+
     }
 
     @Override
@@ -146,9 +148,19 @@ public class Profil extends AppCompatActivity implements AsyncResponse, ProfilVi
 
     }
 
+    public void verify(){
+
+    }
+
+
     @Override
     public String getNume() {
-        return Nume.toString();
+        return Nume.getText().toString().trim();
+    }
+
+    @Override
+    public void setNume(){
+        Nume.setText("test");
     }
 
     @Override

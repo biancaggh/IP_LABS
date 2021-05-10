@@ -1,5 +1,6 @@
 package com.profilepractice;
 
+import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,9 +26,17 @@ public class ProfilPresenterTest {
 
     @Test
     public void showErrorMessageWhenNumeIsEmpty() throws Exception{
-        when(view.getNume()).thenReturn("");
-        presenter.processFinish("test");
 
+        when(view.getNume()).thenReturn("");
+        presenter.processFinish(new JSONObject());
+        verify(view).showNumeError(R.string.nume_error);
+    }
+
+    @Test
+    public void showErrorMessageWhenNumeIsInvalid() throws Exception{
+
+        when(view.getNume()).thenReturn("+-@;:");
+        presenter.processFinish(new JSONObject());
         verify(view).showNumeError(R.string.nume_error);
     }
 }
