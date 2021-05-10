@@ -15,11 +15,12 @@ import org.json.JSONException;
 
 import java.net.MalformedURLException;
 
-public class Login extends AppCompatActivity implements View.OnClickListener, AsyncResponse {
+public class Login extends AppCompatActivity implements View.OnClickListener, AsyncResponse, LoginView {
     private EditText User;
     private EditText Password;
     private Button Login;
     private String user;
+    private LoginPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener, As
         Password=(EditText) findViewById(R.id.etPassword);
 
         Login.setOnClickListener(this);
+        presenter = new LoginPresenter(this, new LoginService());
     }
 
     @Override
@@ -92,6 +94,34 @@ public class Login extends AppCompatActivity implements View.OnClickListener, As
     @Override
     public void processFinish(Boolean output) throws JSONException {
 
+    }
+    @Override
+    public String getUsername() {
+        return User.getText().toString().trim();
+    }
+
+    @Override
+    public void showUsernameError(int resId) {
+        User.setError(getString(resId));
+    }
+    @Override
+    public String getPassword() {
+        return Password.getText().toString().trim();
+    }
+
+    @Override
+    public void showPasswordError(int resId) {
+        Password.setError(getString(resId));
+    }
+
+    @Override
+    public void startActivity() throws MalformedURLException, JSONException {
+        userLogin();
+    }
+
+    @Override
+    public void showLoginError(int resId) {
+        Toast.makeText(Login.this, getString(resId), Toast.LENGTH_LONG).show();
     }
 }
 

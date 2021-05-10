@@ -1,18 +1,21 @@
 package com.profilepractice;
 
-import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-import utility.*;
 
-public class Profil extends AppCompatActivity implements AsyncResponse {
+import utility.AsyncResponse;
+import utility.ProfilAsync;
+
+public class Profil extends AppCompatActivity implements AsyncResponse, ProfilView {
 
     private String user;
     private String cnp;
@@ -25,6 +28,7 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
     private TextView Data;
     private TextView Inaltime;
     private TextView Greutate;
+    private ProfilPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,8 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
         Data = (TextView) findViewById(R.id.viewData);
         Inaltime = (TextView) findViewById(R.id.viewInaltime);
         Greutate = (TextView) findViewById(R.id.viewGreutate);
+
+        presenter = new ProfilPresenter(this, new ProfilService());
 
 
         ProfilAsync asyncTask = new ProfilAsync();
@@ -140,4 +146,13 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
 
     }
 
+    @Override
+    public String getNume() {
+        return Nume.toString();
+    }
+
+    @Override
+    public void showNumeError(int resId) {
+        Nume.setError(getString(resId));
+    }
 }
