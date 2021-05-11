@@ -28,7 +28,7 @@ public class ProfilPresenterTest {
     public void showErrorMessageWhenNumeIsEmpty() throws Exception{
 
         when(view.getNume()).thenReturn("");
-        presenter.processFinish(new JSONObject());
+        presenter.verifyNameEmpty();
         verify(view).showNumeError(R.string.nume_error);
     }
 
@@ -36,7 +36,15 @@ public class ProfilPresenterTest {
     public void showErrorMessageWhenNumeIsInvalid() throws Exception{
 
         when(view.getNume()).thenReturn("+-@;:");
-        presenter.processFinish(new JSONObject());
+        presenter.verifyNameInvalid();
         verify(view).showNumeError(R.string.nume_error);
     }
+
+    @Test
+    public void showErrorMessageWhenGreutateIsNegative() throws Exception{
+        when(view.getGreutate()).thenReturn("-50");
+        presenter.verifyWeight();
+        verify(view).showGreutateError(R.string.greutate_error);
+    }
+
 }

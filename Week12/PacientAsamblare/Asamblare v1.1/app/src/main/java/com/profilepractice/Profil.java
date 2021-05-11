@@ -155,11 +155,13 @@ public class Profil extends AppCompatActivity implements AsyncResponse, ProfilVi
 
     @Override
     public String getNume() {
+
         return Nume.getText().toString().trim();
     }
 
     @Override
     public void setNume(){
+
         Nume.setText("test");
     }
 
@@ -167,4 +169,21 @@ public class Profil extends AppCompatActivity implements AsyncResponse, ProfilVi
     public void showNumeError(int resId) {
         Nume.setError(getString(resId));
     }
+
+    @Override
+    public void setGreutate(){
+        Greutate.setText("50");
+    }
+
+    @Override
+    public String getGreutate() {
+        return Greutate.getText().toString().trim();
+    }
+
+    @Override
+    public void showGreutateError(int resId) {
+        Greutate.setError(getString(resId));
+    }
+
+
 }
