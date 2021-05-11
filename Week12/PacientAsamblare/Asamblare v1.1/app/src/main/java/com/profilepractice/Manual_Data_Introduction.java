@@ -32,14 +32,8 @@ public class Manual_Data_Introduction extends AppCompatActivity  {
         startActivity(intent);
     }
 
-    public void SwitchToHearth(View view) {
-        Intent intent = new Intent(Manual_Data_Introduction.this, Manual_Data_Heart_Rate.class);
-        intent.putExtra("EXTRA_USER", user);
-        startActivity(intent);
-    }
-
-    public void SwitchToSport(View view) {
-        Intent intent = new Intent(Manual_Data_Introduction.this, Manual_Data_Sport.class);
+    public void SwitchToGeneral(View view) {
+        Intent intent = new Intent(Manual_Data_Introduction.this, Manual_Data_General.class);
         intent.putExtra("EXTRA_USER", user);
         startActivity(intent);
     }
@@ -74,12 +68,12 @@ public class Manual_Data_Introduction extends AppCompatActivity  {
         }else
         if (id == R.id.item3) {
             Intent intent = new Intent(Manual_Data_Introduction.this, Statistici.class);
-            intent.putExtra("EXTRA_USER", user);
+            //intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
             return true;
         }else if (id == R.id.item4) {
             Intent intent = new Intent(Manual_Data_Introduction.this, Anomalii.class);
-            intent.putExtra("EXTRA_USER", user);
+            //intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
             return true;
         }else

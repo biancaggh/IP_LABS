@@ -10,47 +10,54 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import utility.AsyncResponse;
 import utility.ManualDOAsync;
 
-public class Manual_Data_Oxygen extends AppCompatActivity  implements AsyncResponse {
-    private EditText Field;
+public class Manual_Data_General extends AppCompatActivity implements AsyncResponse {
+    private EditText Field1;
+    private EditText Field2;
+    private EditText Field3;
     private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manual__data__oxygen);
+        setContentView(R.layout.activity_manual__data__general);
         user = getIntent().getStringExtra("EXTRA_USER");
 
-        Field = (EditText) findViewById(R.id.Field_Oxygen_Level);
-        Field.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "100")});
+        Field1 = (EditText) findViewById(R.id.Field_Hearth_Rate_Level);
+        Field1.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "200")});
+        Field2 = (EditText) findViewById(R.id.Field_Steps_Count);
+        Field3 = (EditText) findViewById(R.id.Field_Calories_Burned);
     }
 
+    public void Verify(View view)
+    {
+        String Value1 = Field1.getText().toString();
+        String Value2 = Field2.getText().toString();
+        String Value3 = Field3.getText().toString();
 
-    public void Verify(View view) {
-        String Value1 = Field.getText().toString();
+        if (Value1.length() == 0 || Value2.length() == 0 || Value3.length() == 0)
+        {
+            Toast.makeText(Manual_Data_General.this, "Please Complete All Fields!", Toast.LENGTH_SHORT).show();
+        } else {
+            ManualDOAsync asyncTask = new ManualDOAsync();
+            asyncTask.delegate = this;
+            asyncTask.execute(user, Value1,Value3,Value2);
 
-        if(Value1.length() == 0) Toast.makeText(Manual_Data_Oxygen.this, "Insert the oxygen level!", Toast.LENGTH_SHORT).show();
-        else {
-            JSONObject Obj = new JSONObject();
+            Log.d("Hearth:", Value1);
+            Log.d("Steps:", Value2);
+            Log.d("Calories:", Value3);
+
             try {
-                ManualDOAsync asyncTask = new ManualDOAsync();
-                asyncTask.delegate = this;
-                asyncTask.execute(user, Value1);
-
                 Thread.sleep(50);
-                Log.d("Hours:", Value1);
-
-            }   catch (InterruptedException Exception){
+            } catch (InterruptedException Exception){
                 Exception.printStackTrace();
             }
+
         }
     }
 
@@ -60,6 +67,7 @@ public class Manual_Data_Oxygen extends AppCompatActivity  implements AsyncRespo
         inflater.inflate(R.menu.meniu, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -70,44 +78,40 @@ public class Manual_Data_Oxygen extends AppCompatActivity  implements AsyncRespo
         //noinspection SimplifiableIfStatement
         if (id == R.id.item1) {
 
-            Intent intent = new Intent(Manual_Data_Oxygen.this, Profil.class);
+            Intent intent = new Intent(Manual_Data_General.this, Profil.class);
             intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item2) {
-            Intent intent = new Intent(Manual_Data_Oxygen.this, Diagnostic.class);
+            Intent intent = new Intent(Manual_Data_General.this, Diagnostic.class);
             intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item3) {
-            Intent intent = new Intent(Manual_Data_Oxygen.this, Statistici.class);
+            Intent intent = new Intent(Manual_Data_General.this, Statistici.class);
             //intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
             return true;
         }else if (id == R.id.item4) {
-            Intent intent = new Intent(Manual_Data_Oxygen.this, Anomalii.class);
+            Intent intent = new Intent(Manual_Data_General.this, Anomalii.class);
             //intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item5) {
-            Intent intent = new Intent(Manual_Data_Oxygen.this, IstoricMedical.class);
+            Intent intent = new Intent(Manual_Data_General.this, IstoricMedical.class);
             intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item6) {
-            Intent intent = new Intent(Manual_Data_Oxygen.this, Manual_Data_Introduction.class);
+            Intent intent = new Intent(Manual_Data_General.this, Manual_Data_Introduction.class);
             intent.putExtra("EXTRA_USER", user);
             startActivity(intent);
             return true;
         }
-        //else
-//        if (id == R.id.item5) {
-//            return true;
-//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -125,14 +129,15 @@ public class Manual_Data_Oxygen extends AppCompatActivity  implements AsyncRespo
     public void processFinish(Boolean output) throws JSONException{
         if(output==true)
         {
-            Intent intent = new Intent(Manual_Data_Oxygen.this, Manual_Data_Introduction.class);
+            Intent intent = new Intent(Manual_Data_General.this, Manual_Data_Introduction.class);
             intent.putExtra("EXTRA_USER", user);
-            Toast.makeText(Manual_Data_Oxygen.this,"Oxigen Data Sent!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(Manual_Data_General.this,"General Data Sent!",Toast.LENGTH_SHORT).show();
             startActivity(intent);
         }
         else
         {
-            Toast.makeText(Manual_Data_Oxygen.this,"Oxigen Data Not Sent!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Manual_Data_General.this,"General Data Not Sent!", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

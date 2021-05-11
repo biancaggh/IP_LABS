@@ -1,20 +1,17 @@
 package utility;
 
 
-
 import android.os.AsyncTask;
-
 import org.json.JSONException;
-import org.json.JSONObject;
 
-public class ManualDSportAsync extends AsyncTask<String, Integer, Boolean> {
+public class ManualDGAsync extends AsyncTask<String, Integer, Boolean> {
 
     public AsyncResponse delegate = null;
 
     @Override
     protected Boolean doInBackground(String... strings) {
         try {
-            ClientCommunicationHandler.sendSport(strings[0], strings[1], strings[2]);
+            ClientCommunicationHandler.sendData(strings[0], strings[1], strings[2], strings[3]);
         } catch (JSONException e) {
             e.printStackTrace();
             return false;

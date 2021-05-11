@@ -1,8 +1,8 @@
 package com.profilepractice;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,12 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import utility.AsyncResponse;
-import utility.ManualDOAsync;
-import utility.ManualDSAsync;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
+import utility.AsyncResponse;
+import utility.ManualDSAsync;
 
 public class Manual_Data_Sleep extends AppCompatActivity  implements AsyncResponse {
     int startHour, startMinutes, endHour, endMinutes;
@@ -35,33 +32,38 @@ public class Manual_Data_Sleep extends AppCompatActivity  implements AsyncRespon
         setContentView(R.layout.activity_manual__data__sleep);
 
         Start_Hour = (EditText) findViewById(R.id.Field_Start_Hour);
+        Start_Hour.setFilters(new InputFilter[]{ new InputFilterMinMax("0", "23")});
 
         Start_Minutes = (EditText) findViewById(R.id.Field_Start_Minutes);
+        Start_Minutes.setFilters(new InputFilter[]{ new InputFilterMinMax("0", "59")});
 
         End_Hour = (EditText) findViewById(R.id.Field_End_Hour);
+        End_Hour.setFilters(new InputFilter[]{ new InputFilterMinMax("0", "23")});
 
         End_Minutes = (EditText) findViewById(R.id.Field_End_Minutes);
+        End_Minutes.setFilters(new InputFilter[]{ new InputFilterMinMax("0", "59")});
         user = getIntent().getStringExtra("EXTRA_USER");
 
     }
 
 
     public void Verify(View view) {
-        startHour = Integer.parseInt(Start_Hour.getText().toString());
-        startMinutes = Integer.parseInt(Start_Minutes.getText().toString());
-        endHour = Integer.parseInt(End_Hour.getText().toString());
-        endMinutes = Integer.parseInt(End_Minutes.getText().toString());
-
         int hours, minutes,Transmit;
+        String Value1,Value2,Value3,Value4;
+        Value1 = Start_Hour.getText().toString();
+        Value2 = Start_Minutes.getText().toString();
+        Value3 = End_Hour.getText().toString();
+        Value4 = End_Minutes.getText().toString();
 
-        if (Start_Hour.getText().toString().trim().length() == 0 || Start_Minutes.getText().toString().trim().length() == 0) {
-            Toast.makeText(Manual_Data_Sleep.this, "Insert the bed time!", Toast.LENGTH_SHORT).show();
-        } else if (End_Hour.getText().toString().trim().length() == 0 || End_Minutes.getText().toString().trim().length() == 0) {
-            Toast.makeText(Manual_Data_Sleep.this, "Insert the wake up time!", Toast.LENGTH_SHORT).show();
-        } else if (startHour > 24 || startHour <= 0 || endHour > 24 || endHour <= 0 ||
-                startMinutes > 59 || startMinutes < 0 || endMinutes > 59 || endMinutes < 0) {
-            Toast.makeText(Manual_Data_Sleep.this, "Tha data inserted is incorrect!", Toast.LENGTH_SHORT).show();
-        } else {
+        if (Value1.length() == 0 || Value2.length() == 0 || Value3.length() == 0 || Value4.length() == 0) {
+            Toast.makeText(Manual_Data_Sleep.this, "Please Insert All Fields!", Toast.LENGTH_SHORT).show();
+        } else
+        {
+            startHour = Integer.parseInt(Value1);
+            startMinutes = Integer.parseInt(Value2);
+            endHour = Integer.parseInt(Value3);
+            endMinutes = Integer.parseInt(Value4);
+
             if (startMinutes > endMinutes) {
                 endHour--;
                 endMinutes = endMinutes + 60;
@@ -74,29 +76,16 @@ public class Manual_Data_Sleep extends AppCompatActivity  implements AsyncRespon
             }
             Transmit = hours * 60 + minutes;
 
-            JSONObject Obj = new JSONObject();
             try {
                 ManualDSAsync asyncTask = new ManualDSAsync();
                 asyncTask.delegate = this;
                 asyncTask.execute(user, String.valueOf(Transmit));
 
-
-                Obj.put("Sleep",Transmit);
-
-                String jsonString = Obj.toString();
-
-
-                FileOutputStream Fos = this.openFileOutput("Sleep.json", Context.MODE_PRIVATE);
-                Fos.write(jsonString.getBytes());
-                Fos.close();
-
                 Log.d("Hours:", Integer.toString(hours));
                 Log.d("Minutes:", Integer.toString(minutes));
-                Log.d("JSON:", jsonString);
-                Log.d("Location:", Manual_Data_Sleep.this.getFilesDir().getAbsolutePath());
-                Toast.makeText(Manual_Data_Sleep.this,"File Created!",Toast.LENGTH_SHORT).show();
+
                 Thread.sleep(50);
-            }   catch (IOException | JSONException |InterruptedException Exception){
+            }   catch (InterruptedException Exception){
                 Exception.printStackTrace();
             }
 
@@ -152,10 +141,6 @@ public class Manual_Data_Sleep extends AppCompatActivity  implements AsyncRespon
             startActivity(intent);
             return true;
         }
-        //else
-//        if (id == R.id.item5) {
-//            return true;
-//        }
 
         return super.onOptionsItemSelected(item);
     }

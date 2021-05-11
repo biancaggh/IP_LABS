@@ -18,4 +18,5 @@
     <string name="login_failed">Error 3</string>
     <string name="nume_error">Error 4</string>
     <string name="greutate_error">Error5</string>
+    <string name="General">General</string>
 </resources>

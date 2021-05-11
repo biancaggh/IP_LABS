@@ -14,11 +14,27 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/Sleep"
+        android:id="@+id/Sport"
         style="@style/MD_Button_Appearance"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_marginTop="35dp"
+        android:backgroundTintMode="add"
+        android:hapticFeedbackEnabled="false"
+        android:onClick="SwitchToGeneral"
+        android:text="@string/General"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:strokeColor="@color/black" />
+
+    <Button
+        android:id="@+id/Sleep"
+        style="@style/MD_Button_Appearance"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
         android:backgroundTintMode="add"
         android:hapticFeedbackEnabled="false"
         android:onClick="SwitchToSleep"
@@ -26,46 +42,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
-
-    <Button
-        android:id="@+id/Hearth_Rate"
-        style="@style/MD_Button_Appearance"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="50dp"
-        android:backgroundTintMode="add"
-        android:hapticFeedbackEnabled="false"
-        android:onClick="SwitchToHearth"
-        android:text="@string/Heart_Rate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Sleep"
-        app:strokeColor="@color/black" />
-
-    <Button
-        android:id="@+id/Sport"
-        style="@style/MD_Button_Appearance"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="50dp"
-        android:backgroundTintMode="add"
-        android:hapticFeedbackEnabled="false"
-        android:onClick="SwitchToSport"
-        android:text="@string/Sport"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Hearth_Rate"
-        app:strokeColor="@color/black" />
+        app:layout_constraintTop_toBottomOf="@+id/Sport" />
 
     <Button
         android:id="@+id/Oxigen"
         style="@style/MD_Button_Appearance"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:backgroundTintMode="add"
         android:hapticFeedbackEnabled="false"
         android:onClick="SwitchToOxigen"
@@ -73,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Sport"
+        app:layout_constraintTop_toBottomOf="@+id/Sleep"
         app:strokeColor="@color/black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

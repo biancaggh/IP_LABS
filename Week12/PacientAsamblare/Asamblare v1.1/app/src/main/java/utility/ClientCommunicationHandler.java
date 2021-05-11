@@ -3,10 +3,7 @@ package utility;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Iterator;
@@ -17,7 +14,7 @@ public class ClientCommunicationHandler {
     static private String host ="https://radiant-bayou-97811.herokuapp.com";
 
     //GET REQUESTS
-    public static Integer login(String username, String password)throws JSONException {
+    public static Integer login(String username, String password) throws JSONException {
         String tempurl = host + "/api/user/login/" + username + "/" + password;
         JSONObject jsonObject = getRequest(tempurl);
         System.out.println(jsonObject);
@@ -72,38 +69,15 @@ public class ClientCommunicationHandler {
     }
 
     //POST REQUESTS
-  /*  public static void sendData(String username,String puls,String calorii,String nr_pasi){
-        String tempurl = host+ "/api/data/import/bigData";
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.append("username",username);
-        jsonObject.append("puls",puls);
-
-        jsonObject.append("calorii",calorii);
-        jsonObject.append("nr_pasi",nr_pasi);
-
-        postRequest(tempurl,jsonObject);
-    }*/
-
-    public static void sendHeartRate(String username, String puls) throws JSONException{
+    public static void sendData(String username,String puls,String calorii,String nr_pasi) throws JSONException {
         String tempurl = host+ "/api/data/import/bigData";
         JSONObject jsonObject = new JSONObject();
         jsonObject.putOpt("username",username);
         jsonObject.putOpt("puls",puls);
-
-        postRequest(tempurl,jsonObject);
-
-    }
-
-    public static void sendSport(String username, String calorii, String nr_pasi) throws JSONException{
-        String tempurl = host+ "/api/data/import/bigData";
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.putOpt("username",username);
-
         jsonObject.putOpt("calorii",calorii);
         jsonObject.putOpt("nr_pasi",nr_pasi);
 
         postRequest(tempurl,jsonObject);
-
     }
 
     public static void sendOxigen(String username,String oxigen) throws JSONException {
@@ -114,7 +88,7 @@ public class ClientCommunicationHandler {
 
         postRequest(tempurl,jsonObject);
     }
-    public static void sendCalitateSomn(String username,String calitate_somn) throws JSONException {
+    public static void sendCalitateSomn(String username,String calitate_somn) throws JSONException{
         String tempurl = host+ "/api/data/import/calitate_somn";
         JSONObject jsonObject = new JSONObject();
         jsonObject.putOpt("username",username);
@@ -188,11 +162,11 @@ public class ClientCommunicationHandler {
         return content.toString();
     }
     public static String createJson(JSONObject jsonObject) throws JSONException {
-            StringBuilder tempString = new StringBuilder();
-            tempString.append("{");
-            int count = 0;
-        for (Iterator<String> it = jsonObject.keys(); it.hasNext(); ) {
-            String key = it.next();
+        StringBuilder tempString = new StringBuilder();
+        tempString.append("{");
+        int count = 0;
+        for (Iterator<String> it = jsonObject.keys(); it.hasNext(); ){
+            String key = it.toString();
             if(count!=0)
                 tempString.append(",");
             tempString.append("\"");
@@ -206,8 +180,8 @@ public class ClientCommunicationHandler {
             tempString.append("\"");
             count++;
         }
-            tempString.delete(tempString.length()-1,tempString.length()-1);
-            tempString.append("}");
-            return tempString.toString();
+        tempString.delete(tempString.length()-1,tempString.length()-1);
+        tempString.append("}");
+        return tempString.toString();
     }
 }
