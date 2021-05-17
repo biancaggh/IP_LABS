@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/App_Background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".users.pacienti.Manual_Data_Introduction">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar_manual_data_introduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/Sport"
+        style="@style/MD_Button_Appearance"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTintMode="add"
+        android:hapticFeedbackEnabled="false"
+        android:onClick="switchToGeneral"
+        android:text="@string/General"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:strokeColor="@color/black" />
+
+    <Button
+        android:id="@+id/Sleep"
+        style="@style/MD_Button_Appearance"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTintMode="add"
+        android:hapticFeedbackEnabled="false"
+        android:onClick="switchToSleep"
+        android:text="@string/Sleep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Sport" />
+
+    <Button
+        android:id="@+id/Oxigen"
+        style="@style/MD_Button_Appearance"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTintMode="add"
+        android:hapticFeedbackEnabled="false"
+        android:onClick="switchToOxigen"
+        android:text="@string/Oxygen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Sleep"
+        app:strokeColor="@color/black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

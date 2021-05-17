@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.medicalapp">
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MedicalApp">
+        <activity android:name=".users.Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".users.doctori.MainPageDoctori" />
+        <activity android:name=".users.doctori.DoctoriProfil" />
+        <activity android:name=".users.doctori.OrarGarda" />
+        <activity android:name=".users.doctori.AdaugareDiagnostic" />
+        <activity android:name=".users.doctori.ListaPacienti" />
+        <activity android:name=".users.asistenti.MainPageAsistent" />
+        <activity android:name=".users.asistenti.ProfilAsistent" />
+        <activity android:name=".users.asistenti.OrarGarda" />
+        <activity android:name=".users.asistenti.AdaugaPacient" />
+        <activity android:name=".users.asistenti.ListaPacienti" />
+        <activity android:name=".users.pacienti.MainActivity" />
+        <activity android:name=".users.pacienti.Statistici" />
+        <activity android:name=".users.pacienti.Profil" />
+        <activity android:name=".users.pacienti.Manual_Data_Sleep" />
+        <activity android:name=".users.pacienti.Manual_Data_Oxygen" />
+        <activity android:name=".users.pacienti.Manual_Data_Introduction" />
+        <activity android:name=".users.pacienti.Manual_Data_General" />
+        <activity android:name=".users.pacienti.IstoricMedical" />
+        <activity android:name=".users.pacienti.Anomalii" />
+        <activity android:name=".users.pacienti.Diagnostic" />
+    </application>
+
+</manifest>
