@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.medicalapp.users.asistenti.OrarGarda">
 
-    <include
-        android:id="@+id/include2"
-        layout="@layout/toolbar_asistenti" />
+    <include android:id="@+id/include2" layout="@layout/toolbar_asistenti" />
 
-    <!--ORAR-->
 
+
+
+    <!-- pentru titlu ORAR-GARZI-->
     <LinearLayout
         android:layout_width="418dp"
         android:layout_height="59dp"
@@ -28,31 +28,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.075">
 
-
         <ImageView
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
             android:layout_width="46dp"
             android:layout_height="45dp"
             android:src="@drawable/timetable" />
 
         <TextView
+            android:layout_marginTop="10dp"
             android:layout_width="230dp"
             android:layout_height="42dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
             android:layout_gravity="center"
             android:text="ORAR-GARZI"
             android:textColor="@android:color/black"
             android:textSize="22dp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
-    <!--DATA1-->
 
+
+
+
+
+    <!-- pentru prima "Data:" -->
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
@@ -65,7 +64,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.149"
         tools:layout_editor_absoluteX="0dp">
-
     </LinearLayout>
 
     <View
@@ -118,8 +116,11 @@
         app:layout_constraintTop_toTopOf="@+id/include2"
         app:layout_constraintVertical_bias="0.181" />
 
-    <!--PRIMA GARDA - DOCTOR-->
 
+
+
+
+    <!-- pentru Garda - Doctor -->
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
@@ -131,8 +132,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.243"
-        tools:layout_editor_absoluteX="7dp">
-
+        tools:layout_editor_absoluteX="0dp">
     </LinearLayout>
 
     <View
@@ -185,8 +185,11 @@
         app:layout_constraintTop_toTopOf="@+id/include2"
         app:layout_constraintVertical_bias="0.285" />
 
-    <!--PRIMA GARDA - ASISTENT1-->
 
+
+
+
+    <!-- pentru Garda-Asistent1-->
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
@@ -199,7 +202,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.328"
         tools:layout_editor_absoluteX="0dp">
-
     </LinearLayout>
 
     <View
@@ -253,8 +255,10 @@
         app:layout_constraintVertical_bias="0.371" />
 
 
-    <!--PRIMA GARDA - ASISTENT2-->
 
+
+
+    <!-- pentru Garda-Asistent2 -->
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
@@ -267,7 +271,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.414"
         tools:layout_editor_absoluteX="7dp">
-
     </LinearLayout>
 
     <View
@@ -321,8 +324,10 @@
         app:layout_constraintVertical_bias="0.456" />
 
 
-    <!--DATA2-->
 
+
+
+    <!-- pentru a doua "Data:" -->
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
@@ -335,7 +340,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499"
         tools:layout_editor_absoluteX="7dp">
-
     </LinearLayout>
 
     <View
@@ -363,8 +367,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.56" />
 
-    <!--A DOUA GARDA - DOCTOR-->
-
     <ImageView
         android:layout_width="38dp"
         android:layout_height="36dp"
@@ -390,6 +392,11 @@
         app:layout_constraintTop_toTopOf="@+id/include2"
         app:layout_constraintVertical_bias="0.56" />
 
+
+
+
+
+    <!-- pentru Garda-Doctor -->
     <LinearLayout
         android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
@@ -402,7 +409,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.603"
         tools:layout_editor_absoluteX="-16dp">
-
     </LinearLayout>
 
     <View
@@ -440,9 +446,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.663" />
-
-    <!--A DOUA GARDA - ASISTENT1-->
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="97dp"
@@ -457,6 +460,11 @@
         app:layout_constraintTop_toTopOf="@+id/include2"
         app:layout_constraintVertical_bias="0.664" />
 
+
+
+
+
+    <!-- pentru Garda-Asistent1-->
     <LinearLayout
         android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
@@ -469,7 +477,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.697"
         tools:layout_editor_absoluteX="7dp">
-
     </LinearLayout>
 
     <View
@@ -507,10 +514,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.749" />
-
-
-    <!--A DOUA GARDA - ASISTENT2-->
-
     <TextView
         android:id="@+id/textView7"
         android:layout_width="97dp"
@@ -525,6 +528,11 @@
         app:layout_constraintTop_toTopOf="@+id/include2"
         app:layout_constraintVertical_bias="0.75" />
 
+
+
+
+
+    <!-- pentru Garda-Asistent2-->
     <LinearLayout
         android:id="@+id/linearLayout8"
         android:layout_width="match_parent"
@@ -537,7 +545,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.777"
         tools:layout_editor_absoluteX="0dp">
-
     </LinearLayout>
 
     <View
@@ -589,6 +596,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include2"
         app:layout_constraintVertical_bias="0.84" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
