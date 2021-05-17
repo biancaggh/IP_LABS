@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.medicalapp.R;
 
+import com.example.medicalapp.users.pacienti.Profil;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,7 +22,6 @@ import java.net.MalformedURLException;
 
 import com.example.medicalapp.users.asistenti.MainPageAsistent;
 import com.example.medicalapp.users.doctori.MainPageDoctori;
-import com.example.medicalapp.users.pacienti.MainActivity;
 import com.example.medicalapp.utility.AsyncResponse;
 import com.example.medicalapp.utility.LoginAsync;
 
@@ -39,15 +39,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener, As
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        button= (Button) findViewById(R.id.button_log);
+        button = (Button) findViewById(R.id.button_log);
         User = (EditText) findViewById(R.id.userid);
         Password = (EditText) findViewById(R.id.parola);
 
         button.setOnClickListener(this);
 
-        spinner = (Spinner)findViewById(R.id.spinnerlog);
+        spinner = (Spinner) findViewById(R.id.spinnerlog);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(Login.this,
-                android.R.layout.simple_spinner_item,paths);
+                android.R.layout.simple_spinner_item, paths);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -55,6 +55,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener, As
 
 
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -85,34 +86,33 @@ public class Login extends AppCompatActivity implements View.OnClickListener, As
             return;
         }
 
-        LoginAsync asyncTask =new LoginAsync();
+        LoginAsync asyncTask = new LoginAsync();
         asyncTask.delegate = this;
-        asyncTask.execute(user,password);
+        asyncTask.execute(user, password);
     }
 
     @Override
     public void processFinish(Integer output) {
         String text = spinner.getSelectedItem().toString();
-        Intent intent;
-        if(output==1)
-        {
-            if(text=="Asistent"){
-                intent = new Intent(com.example.medicalapp.users.Login.this, MainPageAsistent.class);
+        System.out.println("------------------------------------------------");
+        System.out.println(text);
+        System.out.println("------------------------------------------------");
+        if (output == 1) {
+            if (text == "Asistent") {
+                Intent intent = new Intent(com.example.medicalapp.users.Login.this, MainPageAsistent.class);
+                intent.putExtra("EXTRA_USER", user);
+                startActivity(intent);
+            } else if (text == "Doctor") {
+                Intent intent = new Intent(com.example.medicalapp.users.Login.this, MainPageDoctori.class);
+                intent.putExtra("EXTRA_USER", user);
+                startActivity(intent);
+            } else if (text == "Pacient"){
+                System.out.println("MUAHAHAHAHAHAHAHAHAHAHAHAHAHA");
+                Intent intent = new Intent(com.example.medicalapp.users.Login.this, Profil.class);
                 intent.putExtra("EXTRA_USER", user);
                 startActivity(intent);
             }
-            else if (text=="Doctor"){
-                intent = new Intent(com.example.medicalapp.users.Login.this, MainPageDoctori.class);
-                intent.putExtra("EXTRA_USER", user);
-                startActivity(intent);
-            }
-            else{
-                  intent = new Intent(com.example.medicalapp.users.Login.this, MainActivity.class);
-                intent.putExtra("EXTRA_USER", user);
-                startActivity(intent);
-            }
-        }
-        else {
+        } else {
             Toast.makeText(com.example.medicalapp.users.Login.this, "Conectare esuata! ", Toast.LENGTH_LONG).show();
         }
     }

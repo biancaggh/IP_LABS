@@ -28,7 +28,6 @@
         <activity android:name=".users.asistenti.OrarGarda" />
         <activity android:name=".users.asistenti.AdaugaPacient" />
         <activity android:name=".users.asistenti.ListaPacienti" />
-        <activity android:name=".users.pacienti.MainActivity" />
         <activity android:name=".users.pacienti.Statistici" />
         <activity android:name=".users.pacienti.Profil" />
         <activity android:name=".users.pacienti.Manual_Data_Sleep" />

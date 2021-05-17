@@ -14,11 +14,14 @@ public class MainPageAsistent extends AppCompatActivity {
     private Button button2;
     private Button button3;
     private Button button4;
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page_a);
+
+        user = getIntent().getStringExtra("EXTRA_USER");
 
         button1= (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -54,21 +57,25 @@ public class MainPageAsistent extends AppCompatActivity {
     }
     public void openListaPacienti(){
         Intent intent=new Intent(com.example.medicalapp.users.asistenti.MainPageAsistent.this, com.example.medicalapp.users.asistenti.ListaPacienti.class);
+        intent.putExtra("EXTRA_USER", user);
         startActivity(intent);
     }
 
     public void openAddPacient(){
         Intent intent=new Intent(com.example.medicalapp.users.asistenti.MainPageAsistent.this,AdaugaPacient.class);
+        intent.putExtra("EXTRA_USER", user);
         startActivity(intent);
     }
 
     public void openOrarGarda(){
         Intent intent=new Intent(com.example.medicalapp.users.asistenti.MainPageAsistent.this,OrarGarda.class);
+        intent.putExtra("EXTRA_USER", user);
         startActivity(intent);
     }
 
     public void openAsistentProfil(){
         Intent intent=new Intent(com.example.medicalapp.users.asistenti.MainPageAsistent.this, com.example.medicalapp.users.asistenti.ProfilAsistent.class);
+        intent.putExtra("EXTRA_USER", user);
         startActivity(intent);
     }
 }
