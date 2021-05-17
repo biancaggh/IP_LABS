@@ -1,160 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context=".users.doctori.AdaugareDiagnostic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://schemas.android.com/apk/res/android ">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".users.doctori.AdaugareDiagnostic">
 
     <include layout="@layout/toolbar_doctori" />
 
 
-    <EditText android:id="@+id/id_pac" android:layout_width="wrap_content"
-        android:layout_height="61dp" android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true" android:layout_marginStart="98dp"
-        android:layout_marginLeft="98dp" android:layout_marginTop="91dp"
-        android:layout_marginEnd="102dp" android:layout_marginRight="102dp"
-        android:layout_marginBottom="579dp" android:autofillHints="" android:ems="10"
-        android:hint="ID" android:inputType="number" app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.31" />
+    <EditText
+        android:id="@+id/id_pac"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
 
-    <ImageView android:layout_width="42dp" android:layout_height="36dp"
-        android:layout_alignParentStart="true" android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" android:layout_alignParentBottom="true"
-        android:layout_marginStart="45dp" android:layout_marginLeft="45dp"
-        android:layout_marginTop="106dp" android:layout_marginEnd="324dp"
-        android:layout_marginRight="324dp" android:layout_marginBottom="588dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="91dp"
+
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="ID"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <ImageView
+        android:layout_width="42dp"
+        android:layout_height="36dp"
+
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="106dp"
+
         android:src="@drawable/ic_cnp" />
 
 
-    <EditText android:id="@+id/afectiunediag" android:layout_width="wrap_content"
-        android:layout_height="58dp" android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true" android:layout_marginStart="98dp"
-        android:layout_marginLeft="98dp" android:layout_marginTop="173dp"
-        android:layout_marginEnd="102dp" android:layout_marginRight="102dp"
-        android:layout_marginBottom="500dp" android:autofillHints="" android:ems="10"
-        android:hint="Afectiune" android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+    <EditText
+        android:id="@+id/afectiunediag"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="173dp"
+
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Afectiune"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.31" />
 
-    <ImageView android:layout_width="wrap_content" android:layout_height="47dp"
-        android:layout_alignParentStart="true" android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" android:layout_alignParentBottom="true"
-        android:layout_marginStart="45dp" android:layout_marginLeft="45dp"
-        android:layout_marginTop="180dp" android:layout_marginEnd="323dp"
-        android:layout_marginRight="323dp" android:layout_marginBottom="504dp"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+
+        android:layout_marginLeft="-255dp"
+        android:layout_marginTop="180dp"
+
         android:src="@drawable/illness" />
 
 
     <!--INALTIME-->
 
-    <EditText android:id="@+id/medicamentdiag" android:layout_width="wrap_content"
-        android:layout_height="67dp" android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true" android:layout_marginStart="98dp"
-        android:layout_marginLeft="98dp" android:layout_marginTop="248dp"
-        android:layout_marginEnd="102dp" android:layout_marginRight="102dp"
-        android:layout_marginBottom="416dp" android:autofillHints="" android:ems="10"
-        android:hint="Medicamente" android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+    <EditText
+        android:id="@+id/medicamentdiag"
+        android:layout_width="wrap_content"
+        android:layout_height="67dp"
+
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="248dp"
+
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Medicamente"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.31" />
 
-    <ImageView android:layout_width="52dp" android:layout_height="36dp"
-        android:layout_alignParentStart="true" android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" android:layout_alignParentBottom="true"
-        android:layout_marginStart="39dp" android:layout_marginLeft="39dp"
-        android:layout_marginTop="266dp" android:layout_marginEnd="319dp"
-        android:layout_marginRight="319dp" android:layout_marginBottom="428dp"
+    <ImageView
+        android:layout_width="52dp"
+        android:layout_height="36dp"
+
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="266dp"
+
         android:src="@drawable/pill" />
 
-    <EditText android:id="@+id/admindiag" android:layout_width="wrap_content"
-        android:layout_height="66dp" android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true" android:layout_marginStart="99dp"
-        android:layout_marginLeft="99dp" android:layout_marginTop="332dp"
-        android:layout_marginEnd="101dp" android:layout_marginRight="101dp"
-        android:layout_marginBottom="332dp" android:autofillHints="" android:ems="10"
-        android:hint="Mod administrare" android:inputType="textImeMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+    <EditText
+        android:id="@+id/admindiag"
+        android:layout_width="wrap_content"
+        android:layout_height="66dp"
+
+        android:layout_marginLeft="99dp"
+        android:layout_marginTop="332dp"
+
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Mod administrare"
+        android:inputType="textImeMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.31" />
 
-    <ImageView android:layout_width="50dp" android:layout_height="38dp"
-        android:layout_alignParentStart="true" android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" android:layout_alignParentBottom="true"
-        android:layout_marginStart="44dp" android:layout_marginLeft="44dp"
-        android:layout_marginTop="347dp" android:layout_marginEnd="317dp"
-        android:layout_marginRight="317dp" android:layout_marginBottom="346dp"
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="38dp"
+
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="347dp"
+
         android:src="@drawable/health" />
 
 
     <!--SUBMIT BUTTON-->
 
-    <EditText android:id="@+id/indcdiag" android:layout_width="213dp"
-        android:layout_height="wrap_content" android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true" android:layout_marginStart="101dp"
-        android:layout_marginLeft="101dp" android:layout_marginTop="420dp"
-        android:layout_marginEnd="97dp" android:layout_marginRight="97dp"
-        android:layout_marginBottom="249dp" android:ems="10" android:hint=" Indicatii"
-        android:inputType="textImeMultiLine" app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919" app:layout_constraintStart_toStartOf="parent"
+    <EditText
+        android:id="@+id/indcdiag"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="101dp"
+        android:layout_marginTop="420dp"
+
+        android:ems="10"
+        android:hint=" Indicatii"
+        android:inputType="textImeMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView android:layout_width="wrap_content" android:layout_height="60dp"
-        android:layout_alignParentStart="true" android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" android:layout_alignParentBottom="true"
-        android:layout_marginStart="39dp" android:layout_marginLeft="39dp"
-        android:layout_marginTop="506dp" android:layout_marginEnd="318dp"
-        android:layout_marginRight="318dp" android:layout_marginBottom="164dp"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+
+        android:layout_marginLeft="-40dp"
+        android:layout_marginTop="506dp"
+
         android:src="@drawable/stetoscop" />
 
-    <EditText android:id="@+id/cindcdiag" android:layout_width="213dp"
-        android:layout_height="wrap_content" android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true" android:layout_marginStart="102dp"
-        android:layout_marginLeft="102dp" android:layout_marginTop="506dp"
-        android:layout_marginEnd="96dp" android:layout_marginRight="96dp"
-        android:layout_marginBottom="167dp" android:ems="10" android:hint="ContraIndicatii"
-        android:inputType="textImeMultiLine" app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151" app:layout_constraintStart_toStartOf="parent"
+    <EditText
+        android:id="@+id/cindcdiag"
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="102dp"
+        android:layout_marginTop="506dp"
+
+        android:ems="10"
+        android:hint="ContraIndicatii"
+        android:inputType="textImeMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView android:layout_width="wrap_content" android:layout_height="62dp"
-        android:layout_alignParentStart="true" android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" android:layout_alignParentBottom="true"
-        android:layout_marginStart="39dp" android:layout_marginLeft="39dp"
-        android:layout_marginTop="422dp" android:layout_marginEnd="318dp"
-        android:layout_marginRight="318dp" android:layout_marginBottom="247dp"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+
+        android:layout_marginLeft="-40dp"
+        android:layout_marginTop="422dp"
+
         android:src="@drawable/stetoscop" />
 
-    <Button android:id="@+id/button" android:layout_width="wrap_content"
-        android:layout_height="60dp" android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true" android:layout_marginStart="134dp"
-        android:layout_marginLeft="134dp" android:layout_marginTop="633dp"
-        android:layout_marginEnd="141dp" android:layout_marginRight="141dp"
-        android:layout_marginBottom="38dp" android:background="@drawable/round"
-        android:text="SUBMIT" android:textColor="@color/desert_sand"
-        app:backgroundTint="@color/very_light_blue" app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425" app:layout_constraintStart_toStartOf="parent"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+
+        android:layout_marginLeft="134dp"
+        android:layout_marginTop="589dp"
+
+        android:background="@drawable/round"
+        android:text="SUBMIT"
+        android:textColor="@color/desert_sand"
+        app:backgroundTint="@color/very_light_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </RelativeLayout>

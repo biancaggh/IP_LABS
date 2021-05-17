@@ -14,18 +14,8 @@
         android:id="@+id/nume"
         android:layout_width="wrap_content"
         android:layout_height="67dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="96dp"
         android:layout_marginLeft="96dp"
         android:layout_marginTop="83dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginRight="104dp"
-        android:layout_marginBottom="581dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="Nume"
@@ -41,18 +31,9 @@
     <ImageView
         android:layout_width="52dp"
         android:layout_height="36dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="34dp"
+
         android:layout_marginLeft="34dp"
         android:layout_marginTop="108dp"
-        android:layout_marginEnd="324dp"
-        android:layout_marginRight="324dp"
-        android:layout_marginBottom="586dp"
         android:src="@drawable/ic_person" />
 
     <!--PRENUME-->
@@ -60,18 +41,8 @@
         android:id="@+id/prenume"
         android:layout_width="wrap_content"
         android:layout_height="56dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="96dp"
         android:layout_marginLeft="96dp"
         android:layout_marginTop="163dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginRight="104dp"
-        android:layout_marginBottom="512dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="Prenume"
@@ -79,8 +50,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31" />
+        app:layout_constraintTop_toTopOf="parent" />
+<!--        app:layout_constraintVertical_bias="0.31" />-->
 
     <!--SEX-->
 
@@ -88,18 +59,10 @@
         android:id="@+id/gen"
         android:layout_width="wrap_content"
         android:layout_height="58dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="99dp"
         android:layout_marginLeft="99dp"
         android:layout_marginTop="244dp"
-        android:layout_marginEnd="259dp"
-        android:layout_marginRight="259dp"
-        android:layout_marginBottom="428dp"
+        android:autofillHints=""
+        android:ems="10"
         android:text="Gen"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,18 +73,10 @@
     <ImageView
         android:layout_width="48dp"
         android:layout_height="41dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="38dp"
+
         android:layout_marginLeft="38dp"
         android:layout_marginTop="241dp"
-        android:layout_marginEnd="325dp"
-        android:layout_marginRight="325dp"
-        android:layout_marginBottom="449dp"
+
         android:src="@drawable/ic_sex" />
 
 
@@ -150,20 +105,12 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="62dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="164dp"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+
         android:layout_marginLeft="164dp"
         android:layout_marginTop="233dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="436dp"
+
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
         android:textColor="@color/cookies_and_cream"
@@ -175,22 +122,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.57" />
 
+
     <EditText
         android:id="@+id/id_pac"
         android:layout_width="wrap_content"
         android:layout_height="61dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="94dp"
+
         android:layout_marginLeft="94dp"
         android:layout_marginTop="291dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginRight="106dp"
-        android:layout_marginBottom="379dp"
+
         android:autofillHints=""
         android:ems="10"
         android:hint="ID"
@@ -204,35 +144,19 @@
     <ImageView
         android:layout_width="42dp"
         android:layout_height="36dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="43dp"
+
         android:layout_marginLeft="43dp"
         android:layout_marginTop="304dp"
-        android:layout_marginEnd="326dp"
-        android:layout_marginRight="326dp"
-        android:layout_marginBottom="390dp"
+
         android:src="@drawable/ic_cnp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="47dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="45dp"
+
         android:layout_marginLeft="45dp"
         android:layout_marginTop="371dp"
-        android:layout_marginEnd="323dp"
-        android:layout_marginRight="323dp"
-        android:layout_marginBottom="313dp"
+
         android:src="@drawable/ic_adress" />
 
 
@@ -241,18 +165,10 @@
         android:id="@+id/data_nas"
         android:layout_width="wrap_content"
         android:layout_height="66dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="88dp"
+
         android:layout_marginLeft="88dp"
         android:layout_marginTop="417dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
-        android:layout_marginBottom="248dp"
+
         android:autofillHints=""
         android:ems="10"
         android:hint="Data nastere"
@@ -266,18 +182,10 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="38dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="40dp"
+
         android:layout_marginLeft="40dp"
         android:layout_marginTop="434dp"
-        android:layout_marginEnd="321dp"
-        android:layout_marginRight="321dp"
-        android:layout_marginBottom="259dp"
+
         android:src="@drawable/ic_data_nastere" />
 
 
@@ -287,18 +195,10 @@
         android:id="@+id/weight"
         android:layout_width="wrap_content"
         android:layout_height="58dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="84dp"
+
         android:layout_marginLeft="84dp"
         android:layout_marginTop="556dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginRight="163dp"
-        android:layout_marginBottom="117dp"
+
         android:ems="10"
         android:hint="Greutate"
         android:inputType="number"
@@ -310,36 +210,20 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="39dp"
+
         android:layout_marginLeft="39dp"
         android:layout_marginTop="500dp"
-        android:layout_marginEnd="321dp"
-        android:layout_marginRight="321dp"
-        android:layout_marginBottom="189dp"
+
         android:src="@drawable/ic_inaltime" />
 
     <EditText
         android:id="@+id/height"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="90dp"
+
         android:layout_marginLeft="90dp"
         android:layout_marginTop="488dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginRight="163dp"
-        android:layout_marginBottom="183dp"
+
         android:ems="10"
         android:hint="Inaltime"
         android:inputType="number"
@@ -351,35 +235,19 @@
     <ImageView
         android:layout_width="43dp"
         android:layout_height="36dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="42dp"
+
         android:layout_marginLeft="42dp"
         android:layout_marginTop="562dp"
-        android:layout_marginEnd="326dp"
-        android:layout_marginRight="326dp"
-        android:layout_marginBottom="133dp"
+
         android:src="@drawable/ic_greutate" />
 
     <ImageView
         android:layout_width="49dp"
         android:layout_height="39dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="37dp"
+
         android:layout_marginLeft="37dp"
         android:layout_marginTop="176dp"
-        android:layout_marginEnd="325dp"
-        android:layout_marginRight="325dp"
-        android:layout_marginBottom="517dp"
+
         android:src="@drawable/ic_person" />
 
 
@@ -388,18 +256,10 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="134dp"
+
         android:layout_marginLeft="134dp"
         android:layout_marginTop="633dp"
-        android:layout_marginEnd="141dp"
-        android:layout_marginRight="141dp"
-        android:layout_marginBottom="38dp"
+
         android:background="@drawable/round"
         android:onClick="submitbuttonHandler"
         android:text="SUBMIT"
@@ -409,5 +269,6 @@
         app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </RelativeLayout>
