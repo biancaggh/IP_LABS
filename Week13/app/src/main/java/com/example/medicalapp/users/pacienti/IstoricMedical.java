@@ -20,6 +20,7 @@ import com.example.medicalapp.utility.async_pacienti.IstoricAsync;
 public class IstoricMedical extends AppCompatActivity implements AsyncResponse {
 
     private String user;
+    private String cnp;
 
     private TextView Boli;
     private TextView Internari;
@@ -31,7 +32,14 @@ public class IstoricMedical extends AppCompatActivity implements AsyncResponse {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_istoric_medical);
 
-        user = getIntent().getStringExtra("EXTRA_USER");
+        String value = getIntent().getStringExtra("EXTRA_USER");
+
+        int position = value.indexOf(",");
+        int length = value.length();
+
+        user = value.substring(0, position);
+        cnp = value.substring(position + 1, length);
+        System.out.println(cnp);
 
         Boli = (TextView) findViewById(R.id.viewBoli);
         Internari = (TextView) findViewById(R.id.viewInternari);
@@ -60,7 +68,7 @@ public class IstoricMedical extends AppCompatActivity implements AsyncResponse {
         //noinspection SimplifiableIfStatement
         if (id == R.id.item1) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.IstoricMedical.this, Profil.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
 
             //Intent intent = new Intent(IstoricMedical.this, Profil.class);
@@ -69,7 +77,7 @@ public class IstoricMedical extends AppCompatActivity implements AsyncResponse {
         } else if (id == R.id.item2) {
 
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.IstoricMedical.this, com.example.medicalapp.users.pacienti.Diagnostic.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
 
             //Intent intent = new Intent(IstoricMedical.this, Diagnostic.class);
@@ -77,16 +85,19 @@ public class IstoricMedical extends AppCompatActivity implements AsyncResponse {
             return true;
         } else if (id == R.id.item3) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.IstoricMedical.this, Statistici.class);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item4) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.IstoricMedical.this, com.example.medicalapp.users.pacienti.Anomalii.class);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item5) {
 
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.IstoricMedical.this, com.example.medicalapp.users.pacienti.IstoricMedical.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
+
             startActivity(intent);
 
             //Intent intent = new Intent(IstoricMedical.this, IstoricMedical.class);
@@ -94,6 +105,7 @@ public class IstoricMedical extends AppCompatActivity implements AsyncResponse {
             return true;
         } else if (id == R.id.item6) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.IstoricMedical.this, com.example.medicalapp.users.pacienti.Manual_Data_Introduction.class);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item7) {

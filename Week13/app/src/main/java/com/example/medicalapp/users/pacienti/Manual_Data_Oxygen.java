@@ -23,12 +23,20 @@ import com.example.medicalapp.utility.async_pacienti.ManualDOAsync;
 public class Manual_Data_Oxygen extends AppCompatActivity implements AsyncResponse {
     private EditText oxygenField;
     private String user;
+    private String cnp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual__data__oxygen);
-        user = getIntent().getStringExtra("EXTRA_USER");
+        String value = getIntent().getStringExtra("EXTRA_USER");
+
+        int position = value.indexOf(",");
+        int length = value.length();
+
+        user = value.substring(0, position);
+        cnp = value.substring(position + 1, length);
+        System.out.println(cnp);
 
         oxygenField = (EditText) findViewById(R.id.Field_Oxygen_Level);
         oxygenField.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "100")});
@@ -68,36 +76,36 @@ public class Manual_Data_Oxygen extends AppCompatActivity implements AsyncRespon
         if (id == R.id.item1) {
 
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Oxygen.this, Profil.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item2) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Oxygen.this, com.example.medicalapp.users.pacienti.Diagnostic.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item3) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Oxygen.this, Statistici.class);
-            //intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }else if (id == R.id.item4) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Oxygen.this, Anomalii.class);
-            //intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item5) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Oxygen.this, IstoricMedical.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item6) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Oxygen.this, com.example.medicalapp.users.pacienti.Manual_Data_Introduction.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }
@@ -123,7 +131,7 @@ public class Manual_Data_Oxygen extends AppCompatActivity implements AsyncRespon
         if(output==true)
         {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Oxygen.this, com.example.medicalapp.users.pacienti.Manual_Data_Introduction.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             Toast.makeText(com.example.medicalapp.users.pacienti.Manual_Data_Oxygen.this,"Oxigen Data Sent!",Toast.LENGTH_SHORT).show();
             startActivity(intent);
         }

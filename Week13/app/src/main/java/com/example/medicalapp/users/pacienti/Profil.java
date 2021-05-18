@@ -37,7 +37,17 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
 
-        user = getIntent().getStringExtra("EXTRA_USER");
+        String value = getIntent().getStringExtra("EXTRA_USER");
+
+        int position = value.indexOf(",");
+        int length = value.length();
+
+        if (position != -1) {
+            user = value.substring(0, position);
+            cnp = value.substring(position + 1, length);
+            System.out.println(cnp);
+        } else
+            user = getIntent().getStringExtra("EXTRA_USER");
 
         User = (TextView) findViewById(R.id.viewUser);
         Nume = (TextView) findViewById(R.id.viewNume);
@@ -75,7 +85,7 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
         if (id == R.id.item1) {
 
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Profil.this, com.example.medicalapp.users.pacienti.Profil.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
 
             //Intent intent = new Intent(Profil.this, Profil.class);
@@ -84,7 +94,7 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
         } else if (id == R.id.item2) {
 
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Profil.this, com.example.medicalapp.users.pacienti.Diagnostic.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
 
             //Intent intent = new Intent(Profil.this, Diagnostic.class);
@@ -92,18 +102,18 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
             return true;
         } else if (id == R.id.item3) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Profil.this, com.example.medicalapp.users.pacienti.Statistici.class);
-           // intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item4) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Profil.this, com.example.medicalapp.users.pacienti.Anomalii.class);
-           // intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item5) {
 
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Profil.this, com.example.medicalapp.users.pacienti.IstoricMedical.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
 
             //Intent intent = new Intent(Profil.this, IstoricMedical.class);
@@ -111,7 +121,7 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
             return true;
         } else if (id == R.id.item6) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Profil.this, com.example.medicalapp.users.pacienti.Manual_Data_Introduction.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item7) {
@@ -132,6 +142,7 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
     public void processFinish(JSONObject output) throws JSONException {
 
         User.setText(user);
+
         Nume.setText(output.getString("nume"));
         Prenume.setText(output.getString("prenume"));
         Gen.setText(output.getString("sex"));
@@ -141,6 +152,7 @@ public class Profil extends AppCompatActivity implements AsyncResponse {
         Inaltime.setText(output.getString("inaltime"));
         Greutate.setText(output.getString("greutate"));
 
+        cnp = output.getString("cnp");
         //verify();
 
     }

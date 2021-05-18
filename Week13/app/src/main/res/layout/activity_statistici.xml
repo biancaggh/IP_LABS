@@ -33,12 +33,11 @@
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/data"/>
 
     </LinearLayout>
 
@@ -74,21 +73,20 @@
             android:src="@drawable/ic_glicemie" />
 
         <TextView
-            android:id="@+id/id_glicemie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Glicemie"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+                android:id="@+id/id_calorii"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Calorii"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/calorii"/>
 
     </LinearLayout>
 
@@ -126,20 +124,19 @@
             android:layout_height="24dp"
             android:src="@drawable/ic_saturatie" />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/saturatie"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            android:layout_marginLeft="5dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Oxigen"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:layout_marginLeft="5dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/oxigen"/>
 
     </LinearLayout>
 
@@ -174,20 +171,19 @@
             android:layout_height="24dp"
             android:src="@drawable/ic_tensiune" />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tensiune"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:layout_marginLeft="5dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nr. Pasi"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:layout_marginLeft="5dp" android:id="@+id/Pasi"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/pasi"/>
 
     </LinearLayout>
 
@@ -233,12 +229,11 @@
             android:textSize="18dp"
             android:layout_marginLeft="5dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/puls"/>
 
     </LinearLayout>
 
@@ -273,22 +268,21 @@
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_temperatura" />
+            android:src="@drawable/ic_sleep" />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Temperatura"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            android:layout_marginLeft="5dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calitate Somn"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:layout_marginLeft="5dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginLeft="25dp"
-            android:textSize="18dp"
-            android:textColor="@android:color/darker_gray"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray" android:id="@+id/somn"/>
 
     </LinearLayout>
 

@@ -68,6 +68,31 @@ public class ClientCommunicationHandler {
         return getRequest(tempurl);
     }
 
+    public static JSONObject getPuls(String cnp){
+        String tempurl = host + "/api/data/get/puls/"+cnp;
+        return getRequest(tempurl);
+    }
+    public static JSONObject getCalorii(String cnp){
+        String tempurl = host + "/api/data/get/calorii/"+cnp;
+        return getRequest(tempurl);
+    }
+    public static JSONObject getPasi(String cnp){
+        String tempurl = host + "/api/data/get/pasi/"+cnp;
+        return getRequest(tempurl);
+    }
+    public static JSONObject getNivelOxigen(String cnp){
+        String tempurl = host + "/api/data/get/nivelOxigen/"+cnp;
+        return getRequest(tempurl);
+    }
+    public static JSONObject getCalitateSomn(String cnp){
+        String tempurl = host + "/api/data/get/calitateSomn/"+cnp;
+        return getRequest(tempurl);
+    }
+    public static JSONObject getRol(String username){
+        String tempurl = host + "/api/user/getRol/"+username;
+        return getRequest(tempurl);
+    }
+
     //POST REQUESTS
     public static void sendData(String username,String puls,String calorii,String nr_pasi) throws JSONException {
         String tempurl = host+ "/api/data/import/bigData";

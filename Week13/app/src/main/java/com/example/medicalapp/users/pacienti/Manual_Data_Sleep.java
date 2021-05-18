@@ -26,6 +26,7 @@ public class Manual_Data_Sleep extends AppCompatActivity implements AsyncRespons
     private EditText endHourField;
     private EditText endMinutesField;
     private String user;
+    private String cnp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,14 @@ public class Manual_Data_Sleep extends AppCompatActivity implements AsyncRespons
 
         endMinutesField = (EditText) findViewById(R.id.Field_End_Minutes);
         endMinutesField.setFilters(new InputFilter[]{ new InputFilterMinMax("0", "59")});
-        user = getIntent().getStringExtra("EXTRA_USER");
+        String value = getIntent().getStringExtra("EXTRA_USER");
+
+        int position = value.indexOf(",");
+        int length = value.length();
+
+        user = value.substring(0, position);
+        cnp = value.substring(position + 1, length);
+        System.out.println(cnp);
 
     }
 
@@ -107,32 +115,32 @@ public class Manual_Data_Sleep extends AppCompatActivity implements AsyncRespons
         if (id == R.id.item1) {
 
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Sleep.this, Profil.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item2) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Sleep.this, com.example.medicalapp.users.pacienti.Diagnostic.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item3) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Sleep.this, Statistici.class);
-            //intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item4) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Sleep.this, com.example.medicalapp.users.pacienti.Anomalii.class);
-            //intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item5) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Sleep.this, com.example.medicalapp.users.pacienti.IstoricMedical.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item6) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Sleep.this, com.example.medicalapp.users.pacienti.Manual_Data_Introduction.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }
@@ -155,7 +163,7 @@ public class Manual_Data_Sleep extends AppCompatActivity implements AsyncRespons
         if(output==true)
         {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_Sleep.this, com.example.medicalapp.users.pacienti.Manual_Data_Introduction.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             Toast.makeText(com.example.medicalapp.users.pacienti.Manual_Data_Sleep.this,"Sleep file sent!",Toast.LENGTH_SHORT).show();
             startActivity(intent);
 

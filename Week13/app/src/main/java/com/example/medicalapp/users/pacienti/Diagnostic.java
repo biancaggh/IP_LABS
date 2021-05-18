@@ -21,6 +21,7 @@ import com.example.medicalapp.utility.async_pacienti.DiagnosticAsync;
 public class Diagnostic extends AppCompatActivity implements AsyncResponse {
 
     private String user;
+    private String cnp;
 
     private TextView Id;
     private TextView Afectiune;
@@ -34,7 +35,14 @@ public class Diagnostic extends AppCompatActivity implements AsyncResponse {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diagnostic);
 
-        user = getIntent().getStringExtra("EXTRA_USER");
+        String value = getIntent().getStringExtra("EXTRA_USER");
+
+        int position = value.indexOf(",");
+        int length = value.length();
+
+        user = value.substring(0, position);
+        cnp = value.substring(position + 1, length);
+        System.out.println(cnp);
 
         Id = (TextView) findViewById(R.id.viewID);
         Afectiune = (TextView) findViewById(R.id.viewAfectiune);
@@ -66,7 +74,7 @@ public class Diagnostic extends AppCompatActivity implements AsyncResponse {
         if (id == R.id.item1) {
 
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Diagnostic.this, Profil.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
 
             //Intent intent = new Intent(Diagnostic.this, Profil.class);
@@ -75,7 +83,7 @@ public class Diagnostic extends AppCompatActivity implements AsyncResponse {
         } else if (id == R.id.item2) {
 
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Diagnostic.this, com.example.medicalapp.users.pacienti.Diagnostic.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
 
             //Intent intent = new Intent(Diagnostic.this, Diagnostic.class);
@@ -83,18 +91,18 @@ public class Diagnostic extends AppCompatActivity implements AsyncResponse {
             return true;
         } else if (id == R.id.item3) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Diagnostic.this, Statistici.class);
-            //intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item4) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Diagnostic.this, Anomalii.class);
-            //intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item5) {
 
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Diagnostic.this, IstoricMedical.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
 
             //Intent intent = new Intent(Diagnostic.this, IstoricMedical.class);
@@ -102,7 +110,7 @@ public class Diagnostic extends AppCompatActivity implements AsyncResponse {
             return true;
         } else if (id == R.id.item6) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Diagnostic.this, Manual_Data_Introduction.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         } else if (id == R.id.item7) {

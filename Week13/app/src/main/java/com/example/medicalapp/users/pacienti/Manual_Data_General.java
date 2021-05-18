@@ -25,12 +25,20 @@ public class Manual_Data_General extends AppCompatActivity implements AsyncRespo
     private EditText stepsField;
     private EditText caloriesField;
     private String user;
+    private String cnp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual__data__general);
-        user = getIntent().getStringExtra("EXTRA_USER");
+        String value = getIntent().getStringExtra("EXTRA_USER");
+
+        int position = value.indexOf(",");
+        int length = value.length();
+
+        user = value.substring(0, position);
+        cnp = value.substring(position + 1, length);
+        System.out.println(cnp);
 
         hearthField = (EditText) findViewById(R.id.Field_Hearth_Rate_Level);
         hearthField.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "200")});
@@ -78,36 +86,36 @@ public class Manual_Data_General extends AppCompatActivity implements AsyncRespo
         if (id == R.id.item1) {
 
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_General.this, Profil.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item2) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_General.this, com.example.medicalapp.users.pacienti.Diagnostic.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item3) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_General.this, Statistici.class);
-            //intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }else if (id == R.id.item4) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_General.this, Anomalii.class);
-            //intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item5) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_General.this, IstoricMedical.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }else
         if (id == R.id.item6) {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_General.this, com.example.medicalapp.users.pacienti.Manual_Data_Introduction.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             startActivity(intent);
             return true;
         }
@@ -129,7 +137,7 @@ public class Manual_Data_General extends AppCompatActivity implements AsyncRespo
         if(output==true)
         {
             Intent intent = new Intent(com.example.medicalapp.users.pacienti.Manual_Data_General.this, com.example.medicalapp.users.pacienti.Manual_Data_Introduction.class);
-            intent.putExtra("EXTRA_USER", user);
+            intent.putExtra("EXTRA_USER", user + "," + cnp);
             Toast.makeText(com.example.medicalapp.users.pacienti.Manual_Data_General.this,"General Data Sent!",Toast.LENGTH_SHORT).show();
             startActivity(intent);
         }

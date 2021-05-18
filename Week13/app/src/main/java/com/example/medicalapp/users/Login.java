@@ -31,8 +31,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener, As
     private Button button;
     private EditText User;
     private EditText Password;
-    private Spinner spinner;
-    private static final String[] paths = {"Asistent", "Doctor", "Pacient"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +43,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener, As
 
         button.setOnClickListener(this);
 
-        spinner = (Spinner) findViewById(R.id.spinnerlog);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(Login.this,
-                android.R.layout.simple_spinner_item, paths);
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
 
 
     }
@@ -93,20 +84,16 @@ public class Login extends AppCompatActivity implements View.OnClickListener, As
 
     @Override
     public void processFinish(Integer output) {
-        String text = spinner.getSelectedItem().toString();
-        System.out.println("------------------------------------------------");
-        System.out.println(text);
-        System.out.println("------------------------------------------------");
-        if (output == 1) {
-            if (text == "Asistent") {
+        if (output % 10 == 1) {
+            if (output / 10 == 2) {
                 Intent intent = new Intent(com.example.medicalapp.users.Login.this, MainPageAsistent.class);
                 intent.putExtra("EXTRA_USER", user);
                 startActivity(intent);
-            } else if (text == "Doctor") {
+            } else if (output / 10 == 3) {
                 Intent intent = new Intent(com.example.medicalapp.users.Login.this, MainPageDoctori.class);
                 intent.putExtra("EXTRA_USER", user);
                 startActivity(intent);
-            } else if (text == "Pacient"){
+            } else if (output / 10 == 1) {
                 System.out.println("MUAHAHAHAHAHAHAHAHAHAHAHAHAHA");
                 Intent intent = new Intent(com.example.medicalapp.users.Login.this, Profil.class);
                 intent.putExtra("EXTRA_USER", user);
