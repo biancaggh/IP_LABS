@@ -2,6 +2,7 @@ package com.example.medicalapp.utility.async_pacienti;
 
 import android.os.AsyncTask;
 import com.example.medicalapp.utility.AsyncResponse;
+import com.example.medicalapp.utility.ClientCommunicationHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -14,11 +15,11 @@ public class StatisticiAsync extends AsyncTask<String, Integer, JSONObject> {
         JSONObject jsonObject = new JSONObject();
         String size;
         Integer value;
-        JSONObject pulss = utility.ClientCommunicationHandler.getPuls(strings[0]);
-        JSONObject pasi = utility.ClientCommunicationHandler.getPasi(strings[0]);
-        JSONObject calorii = utility.ClientCommunicationHandler.getCalorii(strings[0]);
-        JSONObject calitateSomn = utility.ClientCommunicationHandler.getCalitateSomn(strings[0]);
-        JSONObject oxigen = utility.ClientCommunicationHandler.getNivelOxigen(strings[0]);
+        JSONObject pulss = ClientCommunicationHandler.getPuls(strings[0]);
+        JSONObject pasi = ClientCommunicationHandler.getPasi(strings[0]);
+        JSONObject calorii = ClientCommunicationHandler.getCalorii(strings[0]);
+        JSONObject calitateSomn = ClientCommunicationHandler.getCalitateSomn(strings[0]);
+        JSONObject oxigen = ClientCommunicationHandler.getNivelOxigen(strings[0]);
         try {
             size = pulss.getString("size").toString();
             value = Integer.parseInt(size) - 1;

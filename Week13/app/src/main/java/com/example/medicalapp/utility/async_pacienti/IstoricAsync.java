@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 
 import com.example.medicalapp.utility.AsyncResponse;
 
+import com.example.medicalapp.utility.ClientCommunicationHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -13,7 +14,7 @@ public class IstoricAsync extends AsyncTask<String, Integer, JSONObject> {
 
     @Override
     protected JSONObject doInBackground(String... strings) {
-        JSONObject jsonObject = utility.ClientCommunicationHandler.getIstoric(strings[0]);
+        JSONObject jsonObject = ClientCommunicationHandler.getIstoric(strings[0]);
         return jsonObject;
     }
 

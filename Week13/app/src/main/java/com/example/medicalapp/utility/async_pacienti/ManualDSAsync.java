@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 
 import com.example.medicalapp.utility.AsyncResponse;
 
+import com.example.medicalapp.utility.ClientCommunicationHandler;
 import org.json.JSONException;
 
 public class ManualDSAsync extends AsyncTask<String, Integer, Boolean> {
@@ -15,7 +16,7 @@ public class ManualDSAsync extends AsyncTask<String, Integer, Boolean> {
     @Override
     protected Boolean doInBackground(String... strings) {
         try {
-            utility.ClientCommunicationHandler.sendCalitateSomn(strings[0], strings[1]);
+            ClientCommunicationHandler.sendCalitateSomn(strings[0], strings[1]);
         } catch (JSONException e) {
             e.printStackTrace();
             return false;

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ProfilePractice</string>
+    <string name="gen">Gen</string>
+    <string name="saturatie">Saturatie</string>
+    <string name="user">user</string>
+    <string name="login">login</string>
+    <string name="password">password</string>
+    <string name="Password">Password</string>
+    <string name="User">User</string>
+    <string name="Parola">Parola</string>
+    <string name="conectare">conectare</string>
+    <string name="Sleep">Sleep</string>
+    <string name="Heart_Rate">Heart_Rate</string>
+    <string name="Sport">Sport</string>
+    <string name="Oxygen">Oxygen</string>
+    <string name="username_error">Username Invalid</string>
+    <string name="password_error">Password Invalid</string>
+    <string name="login_failed">Login Failed</string>
+    <string name="nume_error">Name Invalid</string>
+    <string name="greutate_error">Weight Invalid</string>
+    <string name="General">General</string>
+</resources>

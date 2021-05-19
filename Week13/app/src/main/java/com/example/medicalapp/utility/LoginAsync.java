@@ -2,8 +2,6 @@ package com.example.medicalapp.utility;
 
 import android.os.AsyncTask;
 
-import com.example.medicalapp.utility.AsyncResponse;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,8 +13,8 @@ public class LoginAsync extends AsyncTask<String, Integer, Integer> {
     @Override
     protected Integer doInBackground(String... strings) {
         try {
-            int nr = utility.ClientCommunicationHandler.login(strings[0], strings[1]);
-            JSONObject jsonObject = utility.ClientCommunicationHandler.getRol(strings[0]);
+            int nr = ClientCommunicationHandler.login(strings[0], strings[1]);
+            JSONObject jsonObject = ClientCommunicationHandler.getRol(strings[0]);
 
             String rol = jsonObject.getString("rol");
             value = nr;

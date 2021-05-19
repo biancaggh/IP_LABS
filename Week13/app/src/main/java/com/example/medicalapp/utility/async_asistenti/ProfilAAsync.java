@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 
 import com.example.medicalapp.utility.AsyncResponse;
 
+import com.example.medicalapp.utility.ClientCommunicationHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -14,7 +15,7 @@ public class ProfilAAsync extends AsyncTask<String, Integer, JSONObject> {
 
     @Override
     protected JSONObject doInBackground(String... strings) {
-        JSONObject jsonObject= utility.ClientCommunicationHandler.getAsistent(strings[0]);
+        JSONObject jsonObject= ClientCommunicationHandler.getAsistent(strings[0]);
         System.out.println(jsonObject);
         return jsonObject;
     }

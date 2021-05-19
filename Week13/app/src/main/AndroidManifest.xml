@@ -37,6 +37,15 @@
         <activity android:name=".users.pacienti.IstoricMedical" />
         <activity android:name=".users.pacienti.Anomalii" />
         <activity android:name=".users.pacienti.Diagnostic" />
+
+        <service
+                android:name=".MyFirebaseMessagingService"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package utility;
+package com.example.medicalapp.utility;
 
 import org.json.JSONException;
 import org.json.JSONObject;

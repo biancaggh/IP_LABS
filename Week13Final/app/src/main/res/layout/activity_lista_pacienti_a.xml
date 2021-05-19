@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.medicalapp.users.asistenti.ListaPacienti">
+
+    <include layout="@layout/toolbar_asistenti"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Pacient Lista-->
+
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="143dp"
+                android:layout_marginRight="143dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/patient_icon" />
+
+            <TextView
+                android:layout_width="119dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="150dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="-40dp"
+                android:text="PACIENTI"
+                android:textColor="@android:color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+
+            <ListView
+                android:layout_width="312dp"
+                android:layout_height="788dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
+

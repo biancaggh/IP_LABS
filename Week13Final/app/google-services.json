@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "472834742256",
+    "firebase_url": "https://iot-in-medical-domain-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "iot-in-medical-domain",
+    "storage_bucket": "iot-in-medical-domain.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472834742256:android:f93caec31316bee9f7ef35",
+        "android_client_info": {
+          "package_name": "com.example.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "472834742256-8c1ntvq9tqhh5j75nebvdnugmkab77sa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCen9NERw0U-stnhx0Zc6rEe5lOqR7vvsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "472834742256-8c1ntvq9tqhh5j75nebvdnugmkab77sa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472834742256:android:adf818d573f04a15f7ef35",
+        "android_client_info": {
+          "package_name": "com.example.medicalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "472834742256-8c1ntvq9tqhh5j75nebvdnugmkab77sa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCen9NERw0U-stnhx0Zc6rEe5lOqR7vvsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "472834742256-8c1ntvq9tqhh5j75nebvdnugmkab77sa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
