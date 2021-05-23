@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="melon">#FBADAE</color>
+    <color name="crayolas_orchid">#E0A2D2</color>
+    <color name="bright_lavanderr">#AF93ED</color>
+    <color name="very_light_blue">#6E7CFC</color>
+    <color name="ultramarine_blue">#3560FE</color>
+    <color name="ryb_blue">#0041FF</color>
+    <color name="bright_lavander">#BE94E6</color>
+    <color name="eton_blue">#8FC1A6</color>
+    <color name="lumber">#FFDFD3</color>
+    <color name="phillipine_silver">#B1B1B1</color>
+    <color name="desert_sand">#DDC3B6</color>
+    <color name="cookies_and_cream">#E8D7AD</color>
+    <color name="menthol">#C7E3A4</color>
+    <color name="pastel_blue">#B4BAD4</color>
+    <color name="platinum">#EBE6E5</color>
+    <color name="dust_storm">#E1CEC9</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

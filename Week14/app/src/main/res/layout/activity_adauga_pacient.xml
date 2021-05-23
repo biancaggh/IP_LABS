@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.medicalapp.users.asistenti.AdaugaPacient">
+
+    <include layout="@layout/toolbar_asistenti"/>
+
+
+
+
+    <!-- pentru NUME -->
+    <EditText
+        android:id="@+id/nume"
+        android:layout_width="wrap_content"
+        android:layout_height="67dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="83dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Nume"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <ImageView
+        android:layout_width="52dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="108dp"
+        android:src="@drawable/ic_person" />
+
+
+
+
+    <!-- pentru PRENUME -->
+    <EditText
+        android:id="@+id/prenume"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="163dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Prenume"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="49dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="176dp"
+        android:src="@drawable/ic_person" />
+
+
+
+
+    <!-- pentru GEN -->
+    <TextView
+        android:id="@+id/gen"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_marginLeft="99dp"
+        android:layout_marginTop="244dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:text="Gen"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="41dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="241dp"
+        android:src="@drawable/ic_sex" />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="164dp"
+        android:layout_marginTop="233dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:textColor="@color/cookies_and_cream"
+        app:backgroundTint="@color/very_light_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57" />
+
+
+
+
+
+    <!-- pentru ID/CNP -->
+    <EditText
+        android:id="@+id/id_pac"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_marginLeft="94dp"
+        android:layout_marginTop="291dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="ID"
+        android:inputType="textWebEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+    <ImageView
+        android:layout_width="42dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="304dp"
+        android:src="@drawable/ic_cnp" />
+
+
+
+
+    <!-- pentru ADRESA -->
+    <EditText
+        android:id="@+id/adresa"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_marginLeft="87dp"
+        android:layout_marginTop="363dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Adresa"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="41dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="371dp"
+        android:src="@drawable/ic_adress" />
+
+
+
+
+
+
+    <!-- pentru  DATA NASTERE -->
+    <EditText
+        android:id="@+id/data_nas"
+        android:layout_width="wrap_content"
+        android:layout_height="66dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="417dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Data nastere"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="434dp"
+        android:src="@drawable/ic_data_nastere" />
+
+
+
+    <!-- pentru INALTIME -->
+    <EditText
+        android:id="@+id/height"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="488dp"
+        android:ems="10"
+        android:hint="Inaltime"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="43dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="500dp"
+        android:src="@drawable/ic_inaltime" />
+
+
+
+
+
+    <!-- pentru GREUTATE -->
+    <EditText
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="556dp"
+        android:ems="10"
+        android:hint="Greutate"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="43dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="562dp"
+        android:src="@drawable/ic_greutate" />
+
+
+
+
+
+    <!-- pentru SUBMIT BUTTON -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="175dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="625dp"
+        android:background="@drawable/round"
+        android:onClick="submitbuttonHandler"
+        android:text="SUBMIT"
+        android:textColor="@color/desert_sand"
+        app:backgroundTint="@color/very_light_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</RelativeLayout>
