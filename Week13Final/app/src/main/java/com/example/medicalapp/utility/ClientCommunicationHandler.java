@@ -204,10 +204,11 @@ public class ClientCommunicationHandler {
             tempString.append("\"");
             tempString.append(":");
             String temp = jsonObject.get(key).toString();
-            temp = temp.substring(1);
-            temp = temp.substring(0,temp.length()-2);
+            //temp = temp.substring(1);
+            //temp = temp.substring(0,temp.length()-2);
             tempString.append(temp);
             tempString.append("\"");
+            System.out.println("temp is " + temp);
             count++;
         }
         tempString.delete(tempString.length()-1,tempString.length()-1);

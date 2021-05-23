@@ -74,6 +74,12 @@ public class Statistici extends AppCompatActivity implements AsyncResponse {
                 startActivity(intent);
             }
         });
+        findViewById(R.id.chart).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ChartPuls.class));
+            }
+        });
     }
 
     @Override
